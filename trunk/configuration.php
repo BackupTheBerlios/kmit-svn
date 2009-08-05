@@ -3,7 +3,7 @@ class JConfig {
 /* Site Settings */
 var $offline = '0';
 var $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
-var $sitename = 'kmit';
+var $sitename = 'Kmit';
 var $editor = 'tinymce';
 var $list_limit = '20';
 var $legacy = '0';
@@ -13,13 +13,13 @@ var $debug_lang = '0';
 /* Database Settings */
 var $dbtype = 'mysql';
 var $host = 'localhost';
-var $user = 'root';
-var $password = 'chaminda';
-var $db = 'kmit';
+var $user = 'hirban_kmit';
+var $password = 'password';
+var $db = 'hirban_kmit';
 var $dbprefix = 'jos_';
 /* Server Settings */
 var $live_site = '';
-var $secret = 'm0I9YdYOym98IpV9';
+var $secret = 'FmKDFvVLfr8XuWGH';
 var $gzip = '0';
 var $error_reporting = '-1';
 var $helpurl = 'http://help.joomla.org';
@@ -36,10 +36,12 @@ var $offset = '0';
 var $offset_user = '0';
 /* Mail Settings */
 var $mailer = 'mail';
-var $mailfrom = 'csanjuw@gmail.com';
-var $fromname = 'kmit';
+var $mailfrom = 'hdulanjala@yahoo.com';
+var $fromname = 'Kmit';
 var $sendmail = '/usr/sbin/sendmail';
 var $smtpauth = '0';
+var $smtpsecure = 'none';
+var $smtpport = '25';
 var $smtpuser = '';
 var $smtppass = '';
 var $smtphost = 'localhost';
@@ -59,8 +61,8 @@ var $sef_suffix    = '0';
 /* Feed Settings */
 var $feed_limit   = 10;
 var $feed_email   = 'author';
-var $log_path = 'C:\\wamp\\www\\kmit\\logs';
-var $tmp_path = 'C:\\wamp\\www\\kmit\\tmp';
+var $log_path = 'E:\\xampp\\htdocs\\kmit\\logs';
+var $tmp_path = 'E:\\xampp\\htdocs\\kmit\\tmp';
 /* Session Setting */
 var $lifetime = '15';
 var $session_handler = 'database';
