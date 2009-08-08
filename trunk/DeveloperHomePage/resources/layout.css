@@ -1,0 +1,551 @@
+﻿#article_left, #home_rightcol_left
+{
+	float:left;
+	width:707px;
+	padding:0;
+	margin-right:31px;
+	min-height:850px;
+}
+
+#disc_home_rightcol_left
+{
+	float:left;
+	width:707px;
+	padding:0;
+	margin-right:31px;
+}
+
+#feature_content
+{
+	min-height:750px;
+}
+
+#article_right, #home_rightcol_right
+{
+	float:left;
+	width:180px;
+	min-height:400px;
+	margin:0;
+	padding:0;
+}
+
+#home_leftcol_right
+{
+	width:677px;
+	padding:0;
+	float:left; 
+}
+
+#home_leftcol_left
+{
+	float:left;
+	width:225px;
+	margin-right:16px;
+}
+
+#home_leftcol_left h2
+{
+	margin-bottom:10px;
+}
+
+#home_rightcol_left .two_column .left_column, #home_rightcol_left .two_column .right_column,
+#home_leftcol_right .left_column, #home_leftcol_right .right_column,
+#disc_home_rightcol_left .two_column .left_column, #disc_home_rightcol_left .two_column .right_column
+{
+	float:left;
+}
+
+#home_rightcol_left .two_column .left_column, #disc_home_rightcol_left .two_column .left_column
+{
+	width:225px;
+	margin-right:16px;
+	min-height:600px;
+}
+
+#home_rightcol_left .two_column .right_column, #disc_home_rightcol_left .two_column .right_column
+{
+	/*width:450px;*/
+	width:466px;
+}
+
+.three_column
+{
+	margin:0;
+	clear:both;
+}
+
+.three_column .left_column, .three_column .middle_column, .three_column .right_column
+{
+	float:left;
+}
+
+.three_column .left_column
+{
+	width: 225px;
+	margin-right:16px;
+}
+
+.three_column .middle_column
+{
+	width: 225px;
+	margin-right:16px;
+}
+
+.three_column .right_column
+{
+	width: 225px;
+}
+
+#home_leftcol_right .left_column
+{
+	width:466px;
+	margin-right:31px;
+}
+
+#home_leftcol_right .right_column
+{
+	width:180px;
+}
+
+#article_threecolumn_center_top
+{
+	float:left;
+	width:707px;
+}
+
+#left_column
+{
+	float:left;
+	width:225px;
+	padding:0;	
+	margin-right:16px;
+}
+
+#center_column
+{
+	float:left;
+	width: 466px;
+	padding: 0;
+	margin: 0;
+}
+
+#center_column
+{
+	/*clear: both;*/
+	width:466px;
+	padding:0;
+	margin: 0 0 25px 0;
+}
+
+#center_column h2
+{
+	margin-top:9px;
+}
+
+#center_column p.introblurb
+{
+	margin-bottom: 0;
+	padding-bottom: 15px;
+}
+
+#center_column .center_column_screenshot 
+{
+	padding-right: 16px;
+}
+
+.four_column_main .left_column
+{
+	width:225px;
+	margin-right:16px;
+	float:left;
+}
+
+.four_column_main .right_column
+{
+	width:225px;
+	float:left;
+}
+
+.four_column_main .center_column
+{
+	float: left;
+	width: 466px;
+	padding:0;
+	margin: 0;
+}
+
+.four_column_main .center_column .center_top, .four_column_main .center_column .center_bottom
+{
+	clear: both;
+	width: 466px;
+	padding: 0;
+	margin: 0;
+}
+
+.four_column_main .center_column .center_top_left, .four_column_main .center_column .center_bottom_left
+{
+	float: left;
+	width: 225px;
+	padding: 0;
+	margin-right: 16px;
+}
+
+.center_column .center_top_right, .center_column .center_bottom_right
+{
+	float: left;
+	width: 225px;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* Discover Video styles */
+.disc_video_left_column
+{
+	width:225px;
+	float:left;
+	margin-right:5px;
+}
+
+.disc_video_right_column
+{
+	float:left;
+	width:674px;
+}
+
+.body_right
+{
+	width: 304px;
+}
+
+.body_right select
+{
+	width: 270px;
+}
+
+.right_indent
+{
+	margin-right:20px;
+}
+
+.left_indent, .h1_indent
+{
+	margin-left:20px;
+}
+
+#full_width_right_column .left_column
+{
+	float:left;
+	width:727px;
+}
+
+#full_width_right_column .right_column
+{
+	width:180px;
+	float:right;
+}
+
+#full_width_left_column .left_column
+{
+	padding:0 10px 0 20px;
+	float:left;
+	width:195px;
+}
+
+/*#full_width_left_column .left_column h2
+{
+	margin:15px 0 15px 0;
+}
+
+#full_width_left_column .left_column h2.noTopmargin
+{
+	margin:0px 0 15px 0;
+}
+
+#full_width_left_column .left_column .featured-downloads
+{
+	margin-top:20px;
+}*/
+
+#full_width_left_column .right_column
+{
+	width:697px;
+	float:right;
+}
+
+#windows_home_center
+{
+	clear:both;
+}
+
+#windowsvista_home_center_left
+{
+	float:left;
+	width:469px;
+}
+
+#windowsvista_home_center_right
+{
+	width:180px;
+	float:right;
+	margin:18px 0 0 0;
+	padding-right:17px;
+}
+
+#windowsvista_home_center_right h2
+{
+	margin-top: 21px;
+}
+
+#windows_home_center .left_column
+{
+	width:445px;
+	margin: 0 21px 0 0;
+}
+
+#windows_home_center .right_column
+{
+	width:180px;
+	margin:0;
+}
+
+#windows_home_center_left .left_column, #windows_home_center_left .right_column
+{
+	width:220px;
+	margin:0;
+	padding:0;
+}
+
+#windows_home_center_left tr.imagelistRow img
+{
+	margin-top:0;
+}
+
+.productDiv
+{
+	background-image:url(../images/productviewer/campaign_background_tile.gif);
+	background-repeat:repeat-x;
+	width:153px;
+	height:250px;
+	margin:0 1px 40px 0;
+	float:left;
+}
+
+.productDiv img
+{
+	margin:25px 18px 0 18px;
+}
+
+.productDiv p
+{
+	margin:0 0 10px 0;
+	line-height:1.3em;
+}
+
+.productDiv p a
+{
+	line-height:1.2em;
+}
+
+.buyDivider
+{
+	background-image:url(../images/div_line_705.gif);
+	background-repeat:no-repeat;
+	width:705px;
+	height:5px;
+	margin:0;
+	padding:0;
+}
+
+.dropDownText
+{
+	color:#646464;
+}
+
+
+
+
+/* New Windows Home page for July 12-15 */
+.windows_right_column
+{
+	float:right;
+	width:697px;
+	margin:0;
+	padding:0;
+}
+
+/* compare editions pages */
+
+.pricing
+{
+	float:left;
+	width:134px;
+	margin:0 16px 0 -16px;
+	min-height:275px;
+}
+
+.pricingBusiness
+{
+	float:left;
+	width:134px;
+	margin:0 16px 0 -16px;
+	height:315px;
+}
+
+.editionsImage
+{
+	float:left;
+	min-height:275px
+}
+
+.editionsImageBusiness
+{
+	float:left;
+	height:315px;
+}
+
+.editionsImage p.caption
+{
+	font-size:10px;
+}
+
+.editionsImage .alignleft
+{
+	margin:0 0 20px 0;
+}
+
+.upgradePricing
+{
+	margin-top:30px;
+}
+
+.versionPricing p, .upgradePricing p
+{
+	margin:0.25em 0em 10px 0em;
+	line-height:1.2em;
+}
+
+.versionPricing h5, .upgradePricing h5
+{
+	font-size:12px;
+}
+
+
+/* windows july 12-15 home */
+#windowsHomeHero
+{
+	float:left;
+	height:332px;
+	margin-right:6px;
+}
+
+#windowsHomeHero ul
+{
+	margin-left:17px;
+}
+
+#windowsHomeHeroText
+{
+	margin:-220px 0px 0 345px;
+	width:400px;
+	height:80px;
+	overflow:hidden;
+}
+
+#windowsHomeHeroText p
+{
+	margin:0.25em 0 0 0;
+}
+
+#windowsHomeHeroBullets
+{
+	width:200px;
+	position:relative;
+	top:60px;
+	left:345px;
+	z-index:10;
+}
+
+#windowsHomeHeroSmall
+{
+	float:left;
+	margin-top: 37px;
+}
+
+#smallHeroBottom
+{
+	width:189px;
+}
+
+.highLightsText
+{
+	padding-left:20px;
+	width:195px;
+}
+
+.highLightsText p
+{
+	margin:0;
+}
+
+#featuredDownloadsContainer
+{
+	width:195px;
+	float:left;
+}
+
+#fullWidthDivider
+{
+	margin:30px 0 30px 0;
+}
+
+
+/* help-how-to */
+
+.ieHeroText
+{
+	margin:-120px 0 0 315px;
+	width:400px;
+	padding-bottom:20px;
+}
+
+.ieHeroText a:link, .ieHeroText a:visited
+{
+	color:#fff;
+	text-decoration:none;
+}
+
+.ieHeroText a:hover
+{
+	text-decoration:underline;
+}
+
+p.helpHowToHero
+{
+	color:#ffe378;
+	margin:0;
+	font-size:12px;
+	line-height:1.5em;
+	font-weight:bold;
+}
+
+p.helpHowToHeroWhite
+{
+	color:#fff;
+	margin:0 0 10px 0;
+	padding:0;
+	font-size:12px;
+	line-height:1.5em;
+	font-weight:bold;
+}
+
+span.pipe
+{
+	color:#fff;
+	margin:0 10px 0 10px;
+}
+
+#buyCampaignUpsellTitle h2
+{
+	margin:25px 0 10px 0;
+}
