@@ -104,6 +104,16 @@
 				</tr>
 				<tr>
 					<td class="key">
+						<label for="mobile">
+							<?php echo JText::_( 'Mobile' ); ?>
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="mobile" id="mobile" size="40" value="<?php echo $this->user->get('mobile'); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
 						<label for="password">
 							<?php echo JText::_( 'New Password' ); ?>
 						</label>

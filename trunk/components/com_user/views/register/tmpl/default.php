@@ -53,6 +53,16 @@ defined('_JEXEC') or die('Restricted access'); ?>
 </tr>
 <tr>
 	<td height="40">
+		<label id="mobilemsg" for="mobile">
+			<?php echo JText::_( 'Mobile' ); ?>:
+		</label>
+	</td>
+	<td>
+		<input type="text" id="mobile" name="mobile" size="40" value="<?php echo $this->escape($this->user->get( 'mobile' ));?>" class="inputbox required validate-mobile" maxlength="100" /> *
+	</td>
+</tr>
+<tr>
+	<td height="40">
 		<label id="pwmsg" for="password">
 			<?php echo JText::_( 'Password' ); ?>:
 		</label>

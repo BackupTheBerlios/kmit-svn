@@ -46,6 +46,16 @@ defined('_JEXEC') or die('Restricted access'); ?>
 		<input class="inputbox required validate-email" type="text" id="email" name="email" value="<?php echo $this->escape($this->user->get('email'));?>" size="40" />
 	</td>
 </tr>
+<tr>
+	<td>
+		<label for="mobile">
+			<?php echo JText::_( 'mobile' ); ?>:
+		</label>
+	</td>
+	<td>
+		<input class="inputbox required validate-mobile" type="text" id="mobile" name="mobile" value="<?php echo $this->escape($this->user->get('mobile'));?>" size="40" />
+	</td>
+</tr>
 <?php if($this->user->get('password')) : ?>
 <tr>
 	<td>

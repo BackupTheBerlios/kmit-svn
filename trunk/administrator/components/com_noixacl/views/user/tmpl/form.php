@@ -52,6 +52,8 @@
 			alert( "<?php echo JText::_( 'WARNLOGININVALID', true ); ?>" );
 		} else if (trim(form.email.value) == "") {
 			alert( "<?php echo JText::_( 'NOIXACL_VIEW_USER_VALIDATE_EMAIL', true ); ?>" );
+		} else if (trim(form.mobile.value) == "") {
+			alert( "<?php echo JText::_( 'NOIXACL_VIEW_USER_VALIDATE_MOBILE', true ); ?>" );
 		} else if (form.gid.value == "") {
 			alert( "<?php echo JText::_( 'NOIXACL_VIEW_USER_VALIDATE_GROUP', true ); ?>" );
 		} else if (((trim(form.password.value) != "") || (trim(form.password2.value) != "")) && (form.password.value != form.password2.value)){
@@ -130,6 +132,16 @@
 					</td>
 					<td>
 						<input class="inputbox" type="text" name="email" id="email" size="40" value="<?php echo $this->user->get('email'); ?>" />
+					</td>
+				</tr>
+				<tr>
+					<td class="key">
+						<label for="mobile">
+							<?php echo JText::_( 'NOIXACL_VIEW_USER_LABEL_MOBILE' ); ?>
+						</label>
+					</td>
+					<td>
+						<input class="inputbox" type="text" name="mobile" id="mobile" size="40" value="<?php echo $this->user->get('mobile'); ?>" />
 					</td>
 				</tr>
 				<tr>

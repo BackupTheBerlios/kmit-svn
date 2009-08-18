@@ -116,6 +116,13 @@ class JTableUser extends JTable
 	var $params			= null;
 
 	/**
+	 * Description
+	 *
+	 * @var string
+	 */
+	var $mobile			= null;
+
+	/**
 	* @param database A database connector object
 	*/
 	function __construct( &$db )
