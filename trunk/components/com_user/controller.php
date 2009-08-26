@@ -273,6 +273,15 @@ class UserController extends JController
 			return false;
 		}
 
+		require_once ("sms_api.php");
+  		$mysms = new sms();
+  		echo $mysms->session;
+  		echo $mysms->getbalance();
+ 		 // $mysms->token_pay("1234567890123456"); //spend voucher with SMS credits
+	      $mobile = JRequest::getString('mobile', '', 'post', JREQUEST_ALLOWRAW);
+		$mysms->send ($mobile, "Kmit", "Welcome to Kmit. Your account has been successfully created. Please check your emails.");
+
+
 		// Send registration confirmation mail
 		$password = JRequest::getString('password', '', 'post', JREQUEST_ALLOWRAW);
 		$password = preg_replace('/[\x00-\x1F\x7F]/', '', $password); //Disallow control chars in the email
