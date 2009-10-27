@@ -1,0 +1,460 @@
+﻿/*p.intro
+{
+	font-size:x-large;
+}*/
+
+p.block
+{
+	padding:0 100px;
+}
+
+p.quote
+{
+	font-size:x-large;
+	float:left;
+	width:350px;
+}
+
+p.indent
+{
+	padding-left: 30px;
+}
+
+p.list_after_para
+{
+	margin-bottom:5px;
+}
+
+ol.alpha
+{
+	list-style-type:lower-alpha;
+}
+
+ol.alphacap
+{
+	list-style-type:upper-alpha;
+}
+
+ul.circle
+{
+	list-style-type:circle;
+}
+
+ul.square
+{
+	list-style-type:square;
+}
+
+ul.inline li
+{
+	float:left;
+}
+
+ul.inside
+{
+	margin: 0 0 12px 164px;
+}
+
+ul.inside li
+{
+	vertical-align: middle;
+}
+
+ul.inside li p
+{
+	padding: 0 0 3px 3px;
+	line-height: 18pt;
+}
+
+ul.insideIntro
+{
+	margin: 0 0 12px 175px;
+}
+
+ul.insideIntro li
+{
+	vertical-align: middle;
+}
+
+ul.insideIntro li p
+{
+	padding-top:0;
+}
+
+ul.Intro
+{
+	margin:0 0 12px 175px;
+	padding:0;
+}
+
+ul.Intro li
+{
+	padding:0;
+	margin:0;
+}
+
+ul.Intro li p
+{
+	padding-top:0;
+}
+
+sup, sub 
+{
+	line-height:1.1em;
+}
+.nolineheight 
+{
+	line-height:0;
+	font-size:0px;
+	margin:0;
+	padding:0;
+	float:right;
+}
+
+/* FEATURED DOWNLOADS */
+
+
+.featured-downloads ul 
+{
+	/*margin-top:10px;*/
+	margin-bottom:0;
+	padding:0;
+}
+
+.featured-downloads li 
+{
+	margin:0px;
+	padding:0px;
+	line-height:1;
+}
+
+.featured-downloads li p 
+{
+	margin:0px;
+	padding:0px;
+	line-height:1em;
+}
+
+.featured-downloads a 
+{
+	display:block;
+	padding:3px;
+}
+
+.featured-downloads p 
+{
+	margin:0;
+	padding:0; 
+}
+
+/* DATATABLE */
+
+.datatable
+{
+	margin-bottom:30px;
+}
+
+.datatable td
+{
+	padding:5px;
+	background-color:#f6f6f6;
+}
+
+.datatable p
+{
+	/*margin:0.25em 5px 15px 5px;*/
+}
+
+.datatable .header p
+{
+	color:#646464;
+	font-weight:bold;
+	font-size:13px;
+	vertical-align:middle;
+	margin:0;
+	padding:0;
+}
+
+.datatable .pivot
+{
+	background-color: #cc99cc;
+}
+
+.datatable .header td
+{
+	background-color:#e6edf1;
+	/*padding: 0 0 0 5px;*/
+	/*vertical-align:top;*/
+}
+
+.datatable td.borderRight
+{
+    border:none;
+    border-right:1px solid #c6c6c6;
+    /*text-align:center;*/
+}
+
+.datatable td.firstBorderRight
+{
+    border:none;
+    border-right:1px solid #c6c6c6;
+    /*padding: 0 10px;*/
+}
+
+.datatable td.borderNone
+{
+    border:none;
+    /*text-align:center;*/
+    /*padding: 0 10px;*/
+}
+
+    
+.datatable td.borderTopFadeLeft
+{
+    border:none;
+    background-image:url(../images/windows-vista/compare-editions/border_fadeout_left.gif);
+    background-repeat:no-repeat;
+    background-position:top left;
+    background-color:#c6c6c6;
+    margin:0;
+    padding:0;
+    font-size:1px;
+    height:1px; 
+    text-align:right;
+}
+
+.datatable td.borderTopFadeRight
+{
+    border:none;
+    background-image:url(../images/windows-vista/compare-editions/border_fadeout_right.gif);
+    background-repeat:no-repeat;
+    background-position:top right;
+    background-color:#c6c6c6;
+    margin:0;
+    padding:0;
+    font-size:1px;
+    height:0;
+}
+
+.datatable td.borderTop
+{
+    border:0;
+    background-color:#c6c6c6;
+    margin:0;
+    padding:0;
+    font-size:1px;
+    height:1px;  
+}
+
+.green_check, .yellow_check, .green_checkmark, .yellow_checkmark, .blue_checkmark, .black_checkmark, .green_checkmark_plus
+{	
+	text-align:center;
+	vertical-align:middle;
+}
+
+.datatable .alternating td
+{
+	background-color:#ffffff;
+}
+
+.nonalternatingdisplay .alternating td
+{
+	background-color:#ffffff;
+}
+
+.datatable td.valign_top
+{
+	vertical-align:top;
+}
+
+.datatable td.valign_bottom
+{
+	vertical-align:bottom;
+}
+
+.datatable td.align_right
+{
+	text-align:right;
+}
+
+.datatable td.valign_middle
+{
+	vertical-align:middle;
+}
+
+.datatable td.align_center
+{
+	text-align:center;
+}
+
+.datatable h5
+{
+	margin:0;
+	padding:0;
+	line-height:1.5em;
+}
+
+#nostyle td
+{
+	border:none;
+	background-color:Transparent;
+	background-image:none;
+}
+
+#nostyle td img.fade
+{
+	display:none;
+}
+
+.datatable td.transparent
+{
+	background-color:transparent;
+}
+
+
+/* BUTTON */
+.greenbutton, .bluebutton, .redbutton
+{
+	padding:0;
+	margin:0;
+	border:0;
+	background-image:url(../images/btn_green_r.gif);
+	background-position:top right;
+	background-repeat:no-repeat;
+	display:table-cell;
+	height:22px;
+}
+
+.greenbutton
+{
+	background-image:url(../images/btn_green_r.gif);
+}
+
+.bluebutton
+{
+	background-image:url(../images/btn_blue_r.gif);
+}
+
+.redbutton
+{
+	background-image:url(../images/btn_orange_r.gif);
+}
+
+.greenbutton span, .bluebutton span, .redbutton span
+{
+	height:22px;
+	padding:2px 10px 7px 10px;
+	margin:0;
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:table-cell;
+	line-height:1.4em;
+}
+
+.greenbutton span
+{
+	background-image:url(../images/btn_green_l.gif);
+}
+
+
+.bluebutton span
+{
+	background-image:url(../images/btn_blue_l.gif);
+}
+
+.redbutton span
+{
+	background-image:url(../images/btn_orange_l.gif);
+}
+
+a.greenbutton:hover, a.greenbutton:visited:hover,a.greenbutton, a.greenbutton:visited,a.greenbutton:active,a.bluebutton:hover, a.bluebutton:visited:hover,a.bluebutton, a.bluebutton:visited, a.bluebutton:active,a.redbutton, a.redbutton:hover, a.redbutton:visited:hover,a.redbutton:visited, a.redbutton:active
+{
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.button_min_width span
+{
+	padding-right:30px;
+	padding-left:30px;
+}
+
+.clearLeft
+{
+	clear:left;
+}
+
+.clear_both
+{
+	clear:both;
+}
+
+.float_left
+{
+	float:left;
+}
+
+.float_left_dl
+{
+	margin:0;
+}
+
+.float_right
+{
+	float:right;
+}
+
+
+
+.imagelist td
+{
+	vertical-align:top;
+	padding-bottom:10px;
+}
+
+.imagelistLeft
+{
+	padding-right:10px;
+}
+
+.imagelistRight p
+{
+	margin-top: -4px;
+}
+
+.heroList p
+{
+	margin-top: -4px;
+}
+
+img.margintop
+{margin:5px 0 0 0;}
+
+
+/*REMOVE CSS BELOW */
+.thislistclass
+{
+	list-style-image: url('http://www.microsoft.com/library/media/1033/windows/images/icon_newsletter.gif');
+}
+
+.thisitemclass
+{
+	color:#993366;
+}
+
+.itemsclass
+{
+	font-weight:bold;	
+}
+
+.nobreak {
+       white-space: nowrap;
+}
+
+span.grayPipe
+{
+	color:#646464;
+	font-size:12px;
+	margin:0 4px 0 4px;
+}

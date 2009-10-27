@@ -1,0 +1,108 @@
+﻿.product_viewer_parent
+{
+    background: url(../images/productviewer/campaign_background_tile.gif) repeat-x;
+    position: relative;
+    z-index: 0;
+    background-color:#fefefe; 
+    width:225px;
+    height:241px;
+    padding:0;
+}
+
+.product_view_left_arrow
+{
+    float: left;
+	background-image: url('../../Framework/images/productviewer/arrow_left.gif');
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+	margin: 0;
+	cursor:pointer;
+}
+
+.product_view_right_arrow
+{
+    float: right;
+	background-image: url('../../Framework/images/productviewer/arrow_right.gif');
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 15px;
+	margin: 0;
+	cursor:pointer;
+}
+
+.productviewercontent
+{
+	padding: 0 10px;
+}
+
+.productviewercontent img
+{
+	margin-top: 25px;
+	margin-left: 45px;
+}
+
+.product_viewer_arrow_div
+{
+	position: absolute;
+    z-index: 10;
+    top: 220px;
+    left: 180px;
+    width: 30px;
+}
+
+/* 20090618 - Adding new hero styles */
+#heroText
+{
+	background: transparent url(/windows/Framework/images/featuredslider/Banner_466x115.jpg) no-repeat;
+    height:100px;
+    width:466px;
+    padding:15px 10px 0 0;
+}	
+#heroText.long
+{
+	background: transparent url(/windows/Framework/images/featuredslider/Banner_707x110.jpg) no-repeat;
+    height:95px;
+    width:707px;	
+}	
+#heroText h5,
+#heroText p
+{
+	color:#fff;
+	margin-left:109px;
+	margin-right:10px;
+}		
+#heroText h5{
+    font-size:16px;
+    font-weight:bold;
+    margin-right:15px;
+}		
+#heroText a 
+{
+	color:#fff;
+}
+#heroText a:hover
+{
+}
+#subtitle 
+{
+	position:relative;
+	margin-bottom:15px;
+}	
+#subtitle h2
+{
+	margin:25px 120px 10px 0;
+}
+#subtitle a
+{
+	position:absolute;
+	right:0;
+	top:9px;
+	font-size:12px;
+}
+#subtitle p a
+{
+	position:static;
+	top:auto;
+}
+		
