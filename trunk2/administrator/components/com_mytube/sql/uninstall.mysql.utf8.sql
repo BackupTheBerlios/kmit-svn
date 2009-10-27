@@ -1,4 +1,0 @@
--- DROP TABLE IF EXISTS `#__jomtube_config`;
--- DROP TABLE IF EXISTS `#__jomtube_categories`;
--- DROP TABLE IF EXISTS `#__jomtube_videos`;
--- DROP TABLE IF EXISTS `#__jomtube_rating`;
