@@ -532,6 +532,14 @@ class UserController extends JController
 				JUtility::sendMail($mailfrom, $fromname, $row->email, $subject2, $message2);
 			}
 		}
+
+		// Send activation SMS
+		require_once ("sms_api.php");
+  		$mysms = new sms();  		
+	      $mobile = $user->get('mobile');
+		$smsBody = JText::_( 'REG_COMPLETE_ACTIVATE_SMS' );
+		$mysms->send ($mobile, "Kmit", $smsBody);
+		
 	}
 }
 ?>
