@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 19, 2009 at 03:36 AM
+-- Generation Time: Nov 20, 2009 at 06:26 PM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `jos_components` (
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `parent_option` (`parent`,`option`(32))
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
 
 --
 -- Dumping data for table `jos_components`
@@ -238,7 +238,11 @@ INSERT INTO `jos_components` (`id`, `name`, `link`, `menuid`, `parent`, `admin_m
 (38, 'Adapters', '', 0, 34, 'option=com_noixacl&controller=adapters', 'Adapters', 'com_noixacl', 3, 'js/ThemeOffice/component.png', 0, '', 1),
 (39, 'About', '', 0, 34, 'option=com_noixacl&controller=noixacl', 'About', 'com_noixacl', 4, 'js/ThemeOffice/component.png', 0, '', 1),
 (40, 'VirtueMart', 'option=com_virtuemart', 0, 0, 'option=com_virtuemart', 'VirtueMart', 'com_virtuemart', 0, '../components/com_virtuemart/shop_image/ps_image/menu_icon.png', 0, '', 1),
-(41, 'virtuemart_version', '', 0, 9999, '', '', '', 0, '', 0, 'RELEASE=1.1.4\r\nDEV_STATUS=stable', 1);
+(41, 'virtuemart_version', '', 0, 9999, '', '', '', 0, '', 0, 'RELEASE=1.1.4\r\nDEV_STATUS=stable', 1),
+(42, 'JoomlaPack', 'option=com_joomlapack', 0, 0, 'option=com_joomlapack', 'JoomlaPack', 'com_joomlapack', 0, 'components/com_joomlapack/assets/images/joomlapack-16.png', 0, '', 1),
+(43, 'BACKUP_NOW', '', 0, 42, 'option=com_joomlapack&view=backup', 'BACKUP_NOW', 'com_joomlapack', 0, 'components/com_joomlapack/assets/images/backup-16.png', 0, '', 1),
+(44, 'CONFIGURATION', '', 0, 42, 'option=com_joomlapack&view=config', 'CONFIGURATION', 'com_joomlapack', 1, 'components/com_joomlapack/assets/images/config-16.png', 0, '', 1),
+(45, 'ADMINISTER_BACKUP_FILES', '', 0, 42, 'option=com_joomlapack&view=buadmin', 'ADMINISTER_BACKUP_FILES', 'com_joomlapack', 2, 'components/com_joomlapack/assets/images/bufa-16.png', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -612,6 +616,126 @@ INSERT INTO `jos_groups` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jos_jp_exclusion`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_exclusion` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `profile` int(10) unsigned NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `value` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `jos_jp_exclusion`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_jp_inclusion`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_inclusion` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `profile` int(10) unsigned NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `value` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `jos_jp_inclusion`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_jp_profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_profiles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `jos_jp_profiles`
+--
+
+INSERT INTO `jos_jp_profiles` (`id`, `description`) VALUES
+(1, 'Default Backup Profile');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_jp_registry`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_registry` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `profile` int(10) unsigned NOT NULL DEFAULT '1',
+  `key` varchar(255) NOT NULL,
+  `value` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `jos_jp_registry`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_jp_stats`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_stats` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) NOT NULL,
+  `comment` longtext,
+  `backupstart` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `backupend` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` enum('run','fail','complete') NOT NULL DEFAULT 'run',
+  `origin` enum('backend','frontend') NOT NULL DEFAULT 'backend',
+  `type` enum('full','dbonly','extradbonly') NOT NULL DEFAULT 'full',
+  `profile_id` bigint(20) NOT NULL DEFAULT '1',
+  `archivename` longtext,
+  `absolute_path` longtext,
+  `multipart` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `jos_jp_stats`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_jp_temp`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_jp_temp` (
+  `key` varchar(255) NOT NULL,
+  `value` longtext NOT NULL,
+  PRIMARY KEY (`key`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `jos_jp_temp`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jos_menu`
 --
 
@@ -800,7 +924,7 @@ CREATE TABLE IF NOT EXISTS `jos_modules` (
   PRIMARY KEY (`id`),
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `jos_modules`
@@ -851,7 +975,8 @@ INSERT INTO `jos_modules` (`id`, `title`, `content`, `ordering`, `position`, `ch
 (43, 'Menu noix', '', 3, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_mainmenu_noix', 0, 0, 1, 'menutype=\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
 (46, 'Oracle', '', 2, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu_noix', 0, 1, 1, 'menutype=oraclemenu\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
 (45, 'Sun', '', 4, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu_noix', 0, 1, 1, 'menutype=sunmenu\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
-(47, 'VirtueMart Shopping Cart', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_virtuemart_cart', 0, 0, 1, '', 0, 0, '');
+(47, 'VirtueMart Shopping Cart', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_virtuemart_cart', 0, 0, 1, '', 0, 0, ''),
+(48, 'JoomlaPack Backup Notification Module', '', 17, 'icon', 0, '0000-00-00 00:00:00', 1, 'mod_jpadmin', 0, 2, 1, '', 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -943,7 +1068,8 @@ INSERT INTO `jos_modules_menu` (`moduleid`, `menuid`) VALUES
 (46, 20),
 (46, 24),
 (46, 54),
-(47, 0);
+(47, 0),
+(48, 0);
 
 -- --------------------------------------------------------
 
@@ -1415,8 +1541,7 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`) VALUES
-('', '1258601645', 'a46509f0db97e3d734b827a6cb29900a', 1, 0, '', 0, 0, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258601645;s:18:"session.timer.last";i:1258601645;s:17:"session.timer.now";i:1258601645;s:22:"session.client.browser";s:92:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.15) Gecko/2009101601 Firefox/3.0.15";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";s:15:"Public Frontend";s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:60:"E:\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"f078e46ac618a4d6563889a4c8b224b3";}auth|a:11:{s:11:"show_prices";i:1;s:7:"user_id";i:0;s:8:"username";s:4:"demo";s:5:"perms";s:0:"";s:10:"first_name";s:5:"guest";s:9:"last_name";s:0:"";s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";i:1;s:22:"is_registered_customer";b:0;}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|i:1;minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";'),
-('', '1258601654', '26cdec54acb622c96534ab385830d813', 1, 0, '', 0, 1, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258601654;s:18:"session.timer.last";i:1258601654;s:17:"session.timer.now";i:1258601654;s:22:"session.client.browser";s:92:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.15) Gecko/2009101601 Firefox/3.0.15";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:60:"E:\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"cf211a2ea05c0a392c4b80e17a541a20";}');
+('admin', '1258741537', 'b17ffec4c5796e299f435caca0262356', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:8;s:19:"session.timer.start";i:1258740797;s:18:"session.timer.last";i:1258741478;s:17:"session.timer.now";i:1258741537;s:22:"session.client.browser";s:92:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.15) Gecko/2009101601 Firefox/3.0.15";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:2:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-19 03:34:14";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:60:"E:\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"89c7b7b3232aa6238bb06be7c960beeb";}');
 
 -- --------------------------------------------------------
 
@@ -1490,7 +1615,7 @@ CREATE TABLE IF NOT EXISTS `jos_users` (
 --
 
 INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `gid`, `registerDate`, `lastvisitDate`, `activation`, `params`, `mobile`) VALUES
-(62, 'Administrator', 'admin', 'hdulanjala@yahoo.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-19 03:34:14', '', '', ''),
+(62, 'Administrator', 'admin', 'hdulanjala@yahoo.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-20 18:13:43', '', '', ''),
 (63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-19 03:34:05', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
 (64, 'user2', 'user2', 'user2@kmit.com', '11303cc0ab96d7a0700856748a97b9ec:0hFP07y4rQrSA3GMrcL4BrgDkTNGWiWu', 'Oracle', 0, 0, 32, '2009-08-09 04:50:13', '2009-08-09 17:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '');
 
