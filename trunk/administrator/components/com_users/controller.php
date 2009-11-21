@@ -187,6 +187,27 @@ class UsersController extends JController
 				$adminEmail = $MailFrom;
 			}
 			JUtility::sendMail( $adminEmail, $adminName, $user->get('email'), $subject, $message );
+			// Send activation SMS			
+			require_once (JPATH_SITE. DS. 'libraries'.DS. 'sms_api.php');
+  			$mysms = new sms();  		
+	      	$mobile = $user->get('mobile');
+			$smsBody = sprintf ( JText::_( 'NEW_USER_SMS' ), $SiteName);
+			$mysms->send ($mobile, "Kmit", $smsBody);
+
+		} else {
+			$adminEmail = $me->get('email');
+			$adminName	= $me->get('name');
+
+			$subject = JText::_('EDIT_USER_MESSAGE_SUBJECT');
+			$message = sprintf ( JText::_('EDIT_USER_MESSAGE'), $user->get('name'), $SiteName, JURI::root(), $user->get('username'), $user->password_clear );
+
+			JUtility::sendMail( $adminEmail, $adminName, $user->get('email'), $subject, $message );
+			// Send activation SMS
+			require_once (JPATH_SITE. DS. 'libraries'.DS. 'sms_api.php');
+  			$mysms = new sms();  		
+	      	$mobile = $user->get('mobile');
+			$smsBody =  sprintf ( JText::_( 'EDIT_USER_SMS' ), $SiteName);
+			$mysms->send ($mobile, "Kmit", $smsBody);	
 		}
 
 		// If updating self, load the new user object into the session
