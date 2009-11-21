@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2009 at 06:26 PM
+-- Generation Time: Nov 21, 2009 at 06:56 PM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -217,7 +217,7 @@ INSERT INTO `jos_components` (`id`, `name`, `link`, `menuid`, `parent`, `admin_m
 (16, 'Categories', '', 0, 1, 'option=com_categories&section=com_banner', 'Categories', '', 3, '', 1, '', 1),
 (17, 'Wrapper', 'option=com_wrapper', 0, 0, '', 'Wrapper', 'com_wrapper', 0, '', 1, '', 1),
 (18, 'Mail To', '', 0, 0, '', '', 'com_mailto', 0, '', 1, '', 1),
-(19, 'Media Manager', '', 0, 0, 'option=com_media', 'Media Manager', 'com_media', 0, '', 1, 'upload_extensions=bmp,csv,doc,epg,gif,ico,jpg,odg,odp,ods,odt,pdf,png,ppt,swf,txt,xcf,xls,BMP,CSV,DOC,EPG,GIF,ICO,JPG,ODG,ODP,ODS,ODT,PDF,PNG,PPT,SWF,TXT,XCF,XLS\nupload_maxsize=10000000\nfile_path=images\nimage_path=images/stories\nrestrict_uploads=1\ncheck_mime=1\nimage_extensions=bmp,gif,jpg,png\nignore_extensions=\nupload_mime=image/jpeg,image/gif,image/png,image/bmp,application/x-shockwave-flash,application/msword,application/excel,application/pdf,application/powerpoint,text/plain,application/x-zip\nupload_mime_illegal=text/html', 1),
+(19, 'Media Manager', '', 0, 0, 'option=com_media', 'Media Manager', 'com_media', 0, '', 1, 'upload_extensions=bmp,csv,doc,epg,gif,ico,jpg,odg,odp,ods,odt,pdf,png,ppt,swf,txt,xcf,xls,BMP,CSV,DOC,EPG,GIF,ICO,JPG,ODG,ODP,ODS,ODT,PDF,PNG,PPT,SWF,TXT,XCF,XLS\nupload_maxsize=10000000\nfile_path=images\nimage_path=images/stories\nrestrict_uploads=1\nallowed_media_usergroup=3\ncheck_mime=1\nimage_extensions=bmp,gif,jpg,png\nignore_extensions=\nupload_mime=image/jpeg,image/gif,image/png,image/bmp,application/x-shockwave-flash,application/msword,application/excel,application/pdf,application/powerpoint,text/plain,application/x-zip\nupload_mime_illegal=text/html\nenable_flash=0\n\n', 1),
 (20, 'Articles', 'option=com_content', 0, 0, '', '', 'com_content', 0, '', 1, 'show_noauth=0\nshow_title=1\nlink_titles=0\nshow_intro=1\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_author=1\nshow_create_date=1\nshow_modify_date=1\nshow_item_navigation=0\nshow_readmore=1\nshow_vote=0\nshow_icons=1\nshow_pdf_icon=1\nshow_print_icon=1\nshow_email_icon=1\nshow_hits=1\nfeed_summary=0\n\n', 1),
 (21, 'Configuration Manager', '', 0, 0, '', 'Configuration', 'com_config', 0, '', 1, '', 1),
 (22, 'Installation Manager', '', 0, 0, '', 'Installer', 'com_installer', 0, '', 1, '', 1),
@@ -446,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `jos_core_acl_aro` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `jos_section_value_value_aro` (`section_value`(100),`value`(100)),
   KEY `jos_gacl_hidden_aro` (`hidden`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `jos_core_acl_aro`
@@ -1541,7 +1541,7 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`) VALUES
-('admin', '1258741537', 'b17ffec4c5796e299f435caca0262356', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:8;s:19:"session.timer.start";i:1258740797;s:18:"session.timer.last";i:1258741478;s:17:"session.timer.now";i:1258741537;s:22:"session.client.browser";s:92:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.15) Gecko/2009101601 Firefox/3.0.15";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:2:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-19 03:34:14";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:60:"E:\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"89c7b7b3232aa6238bb06be7c960beeb";}');
+('admin', '1258829758', '07e7edd30b268d45fc7d9d09748c4625', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:20;s:19:"session.timer.start";i:1258829593;s:18:"session.timer.last";i:1258829758;s:17:"session.timer.now";i:1258829758;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:2:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-20 18:13:43";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"b950c501b96641253e7267d1edfb2b69";}');
 
 -- --------------------------------------------------------
 
@@ -1608,14 +1608,14 @@ CREATE TABLE IF NOT EXISTS `jos_users` (
   KEY `gid_block` (`gid`,`block`),
   KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=65 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
 
 --
 -- Dumping data for table `jos_users`
 --
 
 INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `gid`, `registerDate`, `lastvisitDate`, `activation`, `params`, `mobile`) VALUES
-(62, 'Administrator', 'admin', 'hdulanjala@yahoo.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-20 18:13:43', '', '', ''),
+(62, 'Administrator', 'admin', 'hdulanjala@yahoo.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-21 18:53:21', '', '', ''),
 (63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-19 03:34:05', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
 (64, 'user2', 'user2', 'user2@kmit.com', '11303cc0ab96d7a0700856748a97b9ec:0hFP07y4rQrSA3GMrcL4BrgDkTNGWiWu', 'Oracle', 0, 0, 32, '2009-08-09 04:50:13', '2009-08-09 17:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '');
 
