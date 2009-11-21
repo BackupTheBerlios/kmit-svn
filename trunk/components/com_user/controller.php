@@ -534,7 +534,7 @@ class UserController extends JController
 		}
 
 		// Send activation SMS
-		require_once ("sms_api.php");
+		require_once (JPATH_SITE. DS. 'libraries'.DS. 'sms_api.php');
   		$mysms = new sms();  		
 	      $mobile = $user->get('mobile');
 		$smsBody = JText::_( 'REG_COMPLETE_ACTIVATE_SMS' );
