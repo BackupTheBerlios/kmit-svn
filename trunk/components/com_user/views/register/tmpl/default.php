@@ -5,6 +5,23 @@ defined('_JEXEC') or die('Restricted access'); ?>
 	Window.onDomReady(function(){
 		document.formvalidator.setHandler('passverify', function (value) { return ($('password').value == value); }	);
 	});
+
+function validateForm(form) {
+strVal = form.mobile.value;
+var i;
+    for (i = 0; i < strVal.length; i++)
+    {   
+        // Check that current character is number.
+        var c = strVal.charAt(i);
+        if (((c < "0") || (c > "9"))) {
+		alert("Invalid mobile number");
+		return false;
+	  }
+    }
+    // All characters are numbers.
+    return true;
+}
+
 // -->
 </script>
 
@@ -14,7 +31,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 	}
 ?>
 
-<form action="<?php echo JRoute::_( 'index.php?option=com_user' ); ?>" method="post" id="josForm" name="josForm" class="form-validate">
+<form action="<?php echo JRoute::_( 'index.php?option=com_user' ); ?>" method="post" id="josForm" name="josForm" class="form-validate" onSubmit="return validateForm(this)">
 
 <?php if ( $this->params->def( 'show_page_title', 1 ) ) : ?>
 <div class="componentheading<?php echo $this->escape($this->params->get('pageclass_sfx')); ?>"><?php echo $this->escape($this->params->get('page_title')); ?></div>
@@ -58,7 +75,7 @@ defined('_JEXEC') or die('Restricted access'); ?>
 		</label>
 	</td>
 	<td>
-		<input type="text" id="mobile" name="mobile" size="40" value="<?php echo $this->escape($this->user->get( 'mobile' ));?>" class="inputbox required validate-mobile" maxlength="100" /> *
+		<input type="text" id="mobile" name="mobile" size="40" value="<?php echo $this->escape($this->user->get( 'mobile' ));?>" class="inputbox required validate-mobile" maxlength="10" /> *
 	</td>
 </tr>
 <tr>
