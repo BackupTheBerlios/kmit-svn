@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2009 at 03:27 AM
+-- Generation Time: Nov 22, 2009 at 05:14 PM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -18,6 +18,320 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `hirban_kmit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avrbak_avr_player`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avrbak_avr_player` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `minw` int(11) NOT NULL DEFAULT '0',
+  `minh` int(11) NOT NULL DEFAULT '0',
+  `isjw` int(1) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `code` mediumtext NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
+
+--
+-- Dumping data for table `jos_avrbak_avr_player`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avrbak_avr_ripper`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avrbak_avr_ripper` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `flags` int(11) NOT NULL DEFAULT '0',
+  `cindex` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `regex` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `jos_avrbak_avr_ripper`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avrbak_avr_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avrbak_avr_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `player_id` int(11) NOT NULL,
+  `ripper_id` int(11) NOT NULL DEFAULT '0',
+  `local` int(1) NOT NULL DEFAULT '0',
+  `plist` int(1) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `postreplace` varchar(255) NOT NULL DEFAULT '',
+  `sampleregex` varchar(255) NOT NULL DEFAULT '',
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `tag` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+
+--
+-- Dumping data for table `jos_avrbak_avr_tags`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avr_player`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avr_player` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `minw` int(11) NOT NULL DEFAULT '0',
+  `minh` int(11) NOT NULL DEFAULT '0',
+  `isjw` int(1) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `code` mediumtext NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=43 ;
+
+--
+-- Dumping data for table `jos_avr_player`
+--
+
+INSERT INTO `jos_avr_player` (`id`, `version`, `minw`, `minh`, `isjw`, `name`, `code`, `description`) VALUES
+(1, 0, 0, 0, 1, 'flv', '<script type="text/javascript">\nswfobject.embedSWF(''@RLOC@mediaplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''@FLASHVER@'',@XPINST@,\n{file:''@MURL@'',width:''@WIDTH@'',height:''@HEIGHT@'',@IF(ENABLEJS)@javascriptid:''p_@DIVID@'',\n@/IF@@IFS(PLTHUMBS)@thumbsinplaylist:''@PLTHUMBS@'',\n@/IFS@@IF(AUTOSCROLL)@autoscroll:''@AUTOSCROLL@'',\n@/IF@@IFS(TYPE)@type:''@TYPE@'',\n@/IFS@@IFS(VOLUME)@volume:''@VOLUME@'',\n@/IFS@@IFS(CFG)@config:''@CFG@'',\n@/IFS@@IFS(LINK)@link:''@LINK@'',\n@/IFS@@IFS(IMG)@image:''@IMG@'',\n@/IFS@@IFS(LINK)@linkfromdisplay:''@LINKFROMDISPLAY@'',\n@/IFS@@IFS(LINK)@linktarget:''@LINKTARGET@'',\n@/IFS@@IFS(REPEAT)@repeat:''@REPEAT@'',\n@/IFS@@IFS(SHUFFLE)@shuffle:''@SHUFFLE@'',\n@/IFS@@IFS(RECURL)@recommendations:''@RECURL@'',\n@/IFS@@IFS(DISPLAYWIDTH)@displaywidth:''@DISPLAYWIDTH@'',\n@/IFS@@IFS(DISPLAYHEIGHT)@displayheight:''@DISPLAYHEIGHT@'',\n@/IFS@@IFS(LOGO)@logo:''@LOGO@'',\n@/IFS@@IFS(CAPTIONS)@captions:''@CAPTIONS@'',\n@/IFS@@IFS(USECAPTIONS)@usecaptions:''@USECAPTIONS@'',\n@/IFS@@IFS(SEARCHLINK)@searchlink:''@SEARCHLINK@'',\n@/IFS@showeq:''@SHOWEQ@'',searchbar:''@SEARCHBAR@'',enablejs:''@ENABLEJS@'',autostart:''@AUTOSTART@'',showicons:''@SHOWICONS@'',@IF(!SHOWNAV)@shownavigation:''@SHOWNAV@'',@/IF@@IF(SHOWNAV)@showstop:''@SHOWSTOP@'',showdigits:''@SHOWDIGITS@'',\nshowdownload:''@SHOWDOWNLOAD@'',@/IF@usefullscreen:''@USEFULLSCREEN@'',backcolor:''@PBGCOLOR@'',frontcolor:''@PFGCOLOR@'',\nlightcolor:''@PHICOLOR@'',screencolor:''@PSCCOLOR@'',overstretch:''@STRETCH@''}\n,{allowscriptaccess:''always'',seamlesstabbing:''true'',allowfullscreen:''true'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},\n{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'JW Media Player'),
+(2, 0, 0, 0, 0, 'wmv', '<object classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"\n type="application/x-oleobject" style="width: @WIDTH@px; height: @HEIGHT@px;">\n<param name="URL" value="@MURL@" />\n<param name="stretchToFit" value="1" />\n<param name="showControls" value="1" />\n<param name="showStatusBar" value="0" />\n<param name="animationAtStart" value="1" />\n<param name="autoStart" value="@AUTOSTART!d@" />\n<param name="enableFullScreenControls" value="@USEFULLSCREEN!d@" \n/><embed src="@MURL@" style="width: @WIDTH@px; height: @HEIGHT@px;" autoStart="@AUTOSTART!d@" animationAtStart="1" enableFullScreenControls="@USEFULLSCREEN!d@" type="application/x-mplayer2"/></embed></object>', 'Windows Media Player'),
+(3, 0, 0, 0, 0, 'mov', '<object codebase="http://www.apple.com/qtactivex/qtplugin.cab" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" style="width: @WIDTH@px; height: @HEIGHT@px;"><param name="src" value="@MURL@" /><param name="controller" value="True" /><param name="cache" value="False" /><param name="autoplay" value="@AUTOSTART@" /><param name="kioskmode" value="False" /><param name="scale" value="tofit" /><embed src="@MURL@" pluginspage="http://www.apple.com/quicktime/download/" scale="tofit" kioskmode="False" qtsrc="@MURL@" cache="False" style="width: @WIDTH@px; height: @HEIGHT@px;" controller="True" type="video/quicktime" autoplay="@AUTOSTART@" /></object>', 'QuickTime Player'),
+(4, 0, 0, 0, 0, 'rm', '<object classid="clsid:CFCDAA03-8BE4-11cf-B84B-0020AFBBCCFA" style="width: @WIDTH@px; height: @HEIGHT@px;"><param name="controls" value="ControlPanel" /><param name="autostart" value="@AUTOSTART!d@" /><param name="src" value="@MURL@" /><embed src="@MURL@" type="audio/x-pn-realaudio-plugin" style="width: @WIDTH@px; height: @HEIGHT@px;" controls="ControlPanel" autostart="@AUTOSTART!d@" /></object>', 'Real Media Player'),
+(5, 0, 0, 0, 0, 'divx', '<object classid="CLSID:67DABFBF-D0AB-41fa-9C46-CC0F21721616"\ncodebase="http://download.divx.com/webplayer/stage6/windows/AutoDLDivXWebPlayerInstaller.cab" \n type="application/x-oleobject" style="width: @WIDTH@px; height: @HEIGHT@px;">\n<param name="src" value="@MURL@" />\n<param name="custommode" value="Stage6" />\n<param name="showControls" value="1" />\n<param name="showpostplaybackad" value="false" />\n<param name="allowContextMenu" value="@MENU@" />\n@IFS(IMG)@<param name="previewImage" value="@IMG@" />\n@/IFS@<param name="autoplay" value="@AUTOSTART@" \n/><embed type="video/divx" src="@MURL@" style="width: @WIDTH@px; height: @HEIGHT@px;" pluginspage="http://go.divx.com/plugin/download/" showpostplaybackad="false" custommode="Stage6" autoplay="@AUTOSTART@" allowContextMenu="@MENU@"@@IFS(IMG)@ previewImage="@IMG@"@/IFS@/></object>', 'DivX Webplayer'),
+(6, 0, 0, 0, 0, '6cn', '<script type="text/javascript">\nswfobject.embedSWF(''http://6.cn/player.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{vid:''@CODE@'',flag:''1''},{allowfullscreen:''true'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', '6Cn.com original player'),
+(7, 0, 0, 0, 0, 'biku', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.biku.com/opus/player.swf?VideoID=@CODE@&embed=true&autoStart=@AUTOSTART@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',menu:''@MENU@'',bgcolor:''@BGCOLOR@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Biku.com original player'),
+(8, 0, 0, 0, 0, 'bofunk', '<script type="text/javascript">\nswfobject.embedSWF(''@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{allowfullscreen:''true'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Bofunk.com original player'),
+(9, 0, 0, 0, 0, 'break', '<script type="text/javascript">\nswfobject.embedSWF(''@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Break.com original player'),
+(10, 0, 0, 0, 0, 'clipfish', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.clipfish.de/videoplayer.swf?videoid=@CODE@&r=1'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'ClipFish.de original player'),
+(11, 0, 0, 0, 0, 'collegehumor', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.collegehumor.com/moogaloop/moogaloop.swf?clip_id=@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'CollegeHumor original player'),
+(12, 0, 420, 340, 0, 'currenttv', '<script type="text/javascript">\nswfobject.embedSWF(''http://current.com/e/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'CurrentTV original player'),
+(13, 0, 0, 0, 0, 'dmotion', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.dailymotion.com/swf/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''8.0.0'',@XPINST@,\n{v3:''1'',related:''0'',autoPlay:''@AUTOSTART!d@'',colors:''background:DDDDDD;glow:FFFFFF;foreground:333333;special:FFC300;''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',quality:''high'',allowScriptAccess:''allways'',allowfullscreen:''true'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'DailyMotion.com original player'),
+(14, 0, 0, 0, 0, 'vidiac', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.vidiac.com/vidiac.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{name:''ePlayer'',video:''@CODE@''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Vidiac.com original player'),
+(15, 0, 0, 0, 0, 'gametrailers', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.gametrailers.com/remote_wrap.php?mid=@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'GameTrailers.com original player'),
+(16, 0, 0, 0, 0, 'google', '<script type="text/javascript">\nswfobject.embedSWF(''http://video.google.com/googleplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{@IF(AUTOSTART)@autoPlay:''true'',@/IF@docId:''@CODE@'',hl:''@LANG@''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Google Video original player'),
+(17, 0, 0, 0, 0, 'spike', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.spike.com/efp'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{flvBaseClip:''@CODE@''},{name:''efp'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Spike.com original player (previously iFilm.com)'),
+(18, 0, 0, 0, 0, 'jumpcut', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.jumpcut.com/media/flash/jump.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{asset_type:''movie'',asset_id:''@CODE@'',eb:''1''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'JumpCut.com original player'),
+(19, 0, 0, 0, 0, 'mega', '<script type="text/javascript">\nswfobject.embedSWF(''http://wwwstatic.megavideo.com/tmp_mvplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''8.0.0'',@XPINST@,\n{waitingtime:''0'',flv:''@CODE@'',k:''@RRESA@'',poker:''0'',v:''@OCODE@'',rel_again:''Play again'',rel_other:''Related videos'',u:'''',user:'''',from:''from:'',views:''views'',vid_time:''@RRESB@'',vid_name:'''',videoname:''''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',quality:''high'',allowScriptAccess:''sameDomain'',allowFullScreen:''@USEFULLSCREEN@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'MegaVideo.com original player'),
+(20, 0, 0, 0, 0, 'metacafe', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.metacafe.com/fplayer/@CODE@.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{altServerURL:''http://www.metacafe.com'',playerVars:''showStats=no|autoPlay=no|videoTitle=''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'MetaCafe.com original player'),
+(21, 0, 0, 0, 0, 'mofile', '<script type="text/javascript">\nswfobject.embedSWF(''http://tv.mofile.com/cn/xplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{v:''@CODE@'',autoplay:''0''},{wmode:''@WMODE@'',allowScriptAccess:''always'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Mofile.com original player'),
+(22, 0, 0, 0, 0, 'myvideo', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.myvideo.de/movie/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'MyVideo.com original player'),
+(23, 0, 0, 0, 0, 'quxiu', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.quxiu.com/photo/swf/swfobj.swf?id=@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Quixu.com original player'),
+(24, 0, 0, 0, 0, 'revver', '<script type="text/javascript">\nswfobject.embedSWF(''http://flash.revver.com/player/1.0/player.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{mediaId:''@CODE@'',javascriptContext:''true'',skinURL:''http://flash.revver.com/player/1.0/skins/Default_Raster.swf'',skinImgURL:''http://flash.revver.com/player/1.0/skins/night_skin.png'',actionBarSkinURL:''http://flash.revver.com/player/1.0/skins/DefaultNavBarSkin.swf'',resizeVideo:''true''},\n{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Revver.com original player'),
+(25, 0, 0, 0, 0, 'seehaha', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.seehaha.com/flash/playvid2.swf?vidID=@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'SeeHaha.com original player'),
+(26, 0, 0, 0, 0, 'sevenload', '<script type="text/javascript">\nswfobject.embedSWF(''http://de.sevenload.com/pl/@CODE@/503x403/swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',allowscriptaccess:''always'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''\n},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'SevenLoad.com original player'),
+(27, 0, 0, 0, 0, 'stickam', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.stickam.com/flashVarMediaPlayer/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',scale:''noscale'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'StickAm.com original player'),
+(28, 0, 0, 0, 0, 'streetfire', '<script type="text/javascript">\nswfobject.embedSWF(''http://videos.streetfire.net/vidiac.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{name:''ePlayer'',video:''@CODE@''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'StreetFire original player'),
+(29, 0, 432, 285, 0, 'ted', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.ted.com/swf/videoplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''8.0.0'',@XPINST@,\n{jsonStr:''@CODE@'',flashID:''swfVideoPlayer''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',quality:''high'',allowScriptAccess:''always'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'TED.com original player'),
+(30, 0, 0, 0, 0, 'ted2', '<script type="text/javascript">\nswfobject.embedSWF(''http://static.videoegg.com/ted/flash/loader.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''8.0.0'',@XPINST@,\n{file:''@CODE@'',autoPlay:''@AUTOSTART@'',allowFullscreen:''@USEFULLSCREEN@'',forcePlay:''false'',logo:'''',fullscreenURL:''http://static.videoegg.com/ted/flash/fullscreen.html''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',quality:''high'',allowScriptAccess:''always'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'TED.com alternative player'),
+(31, 0, 0, 0, 0, 'tudou', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.tudou.com/v/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Tudou.com original player'),
+(32, 0, 0, 0, 0, 'uume', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.uume.com/v/@CODE@_UUME'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Uume.com original player'),
+(33, 0, 0, 0, 0, 'vimeo', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.vimeo.com/moogaloop.swf?clip_id=@CODE@&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&autoplay=@AUTOSTART!d@&fullscreen=@USEFULLSCREEN!d@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',allowfullscreen:''true'',scale:''showall'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Vimeo.com original player'),
+(34, 0, 0, 0, 0, 'virb', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.virb.com/external/video/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',salign:''tl'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Virb.com original player'),
+(35, 0, 0, 0, 0, 'wangyou', '<script type="text/javascript">\nswfobject.embedSWF(''http://v.wangyou.com/images/x_player.swf?id=@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\nfalse,{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'WangYou.com original player'),
+(36, 0, 0, 0, 0, 'yahoo', '<script type="text/javascript">\nswfobject.embedSWF(''http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{onsite:''0'',embed:''1'',id:''@CODE@''},{allowfullscreen:''@USEFULLSCREEN@'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Yahoo video original player'),
+(37, 0, 0, 0, 0, 'youtube', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.youtube.com/v/@CODE@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{autoplay:''@AUTOSTART!d@'',color1:''@PBGCOLOR@'',color2:''@PHICOLOR@'',rel:''@YTREL!d@'',egm:''@YTEGM!d@'',border:''@YTBORDER!d@'',loop:''@YTLOOP!d@''},{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'YouTube original player'),
+(38, 0, 0, 0, 0, 'jwwmv', '<script type="text/javascript">\nnew jeroenwijering.Player($(''@DIVID@''),''@RLOC@wmvplayer.xaml'',\n{file:''@MURL@'',width:''@WIDTH@'',height:''@HEIGHT@'',@IF(ENABLEJS)@javascriptid:''p_@DIVID@'',\n@/IF@@IFS(PLTHUMBS)@thumbsinplaylist:''@PLTHUMBS@'',\n@/IFS@@IF(AUTOSCROLL)@autoscroll:''@AUTOSCROLL@'',\n@/IF@@IFS(TYPE)@type:''@TYPE@'',\n@/IFS@@IFS(CFG)@config:''@CFG@'',\n@/IFS@@IFS(LINK)@link:''@LINK@'',\n@/IFS@@IFS(IMG)@image:''@IMG@'',\n@/IFS@@IFS(LINK)@linkfromdisplay:''@LINKFROMDISPLAY@'',\n@/IFS@@IFS(LINK)@linktarget:''@LINKTARGET@'',\n@/IFS@@IFS(REPEAT)@repeat:''@REPEAT@'',\n@/IFS@@IFS(SHUFFLE)@shuffle:''@SHUFFLE@'',\n@/IFS@@IFS(RECURL)@recommendations:''@RECURL@'',\n@/IFS@@IFS(DISPLAYWIDTH)@displaywidth:''@DISPLAYWIDTH@'',\n@/IFS@@IFS(DISPLAYHEIGHT)@displayheight:''@DISPLAYHEIGHT@'',\n@/IFS@@IFS(LOGO)@logo:''@LOGO@'',\n@/IFS@@IFS(SEARCHLINK)@searchlink:''@SEARCHLINK@'',\n@/IFS@showeq:''@SHOWEQ@'',searchbar:''@SEARCHBAR@'',enablejs:''@ENABLEJS@'',autostart:''@AUTOSTART@'',showicons:''@SHOWICONS@'',@IF(!SHOWNAV)@shownavigation:''@SHOWNAV@'',@/IF@@IF(SHOWNAV)@showstop:''@SHOWSTOP@'',showdigits:''@SHOWDIGITS@'',\nshowdownload:''@SHOWDOWNLOAD@'',@/IF@usefullscreen:''@USEFULLSCREEN@'',backcolor:''@PBGCOLOR@'',frontcolor:''@PFGCOLOR@'',\nlightcolor:''@PHICOLOR@'',screencolor:''@PSCCOLOR@'',overstretch:''@STRETCH@''}\n);\n</script>', 'JW WMV Player (needs MS-SilverLight)'),
+(39, 0, 0, 0, 0, 'swf', '<script type="text/javascript">\nswfobject.embedSWF(''@MURL@'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''@FLASHVER@'',@XPINST@,\nfalse,{allowscriptaccess:''always'',seamlesstabbing:''true'',allowfullscreen:''true'',wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',menu:''@MENU@''},\n{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Plain flash embedding (for flash animations)'),
+(40, 0, 0, 0, 0, 'brightcove', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.brightcove.tv/playerswf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{initVideoId:''@CODE@'',servicesURL:''http://www.brightcove.tv'',\nviewerSecureGatewayURL:''https://www.brightcove.tv'',\ncdnURL:''http://admin.brightcove.com'',autoStart:''@AUTOSTART@''},\n{base:''http://admin.brightcove.com'',\nwmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',allowFullScreen:''true'',\nallowScriptAccess:''always'',seamlesstabbing:''false'',swLiveConnect:''true''\n,menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Brightcove.tv original player'),
+(41, 0, 0, 0, 0, 'myshows', '<script type="text/javascript">\nswfobject.embedSWF(''http://www.seehaha.com/flash/player.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''9.0.28'',@XPINST@,\n{vidFileName:''@CODE@''},\n{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',allowFullScreen:''@USEFULLSCREEN@'',menu:''@MENU@''},{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Myshows.cn (previouslyly seehaha.com)'),
+(42, 0, 0, 0, 0, 'blip', '<script type="text/javascript">\nswfobject.embedSWF(''http://blip.tv/scripts/flash/showplayer.swf'',''@DIVID@'',''@WIDTH@'',''@HEIGHT@'',''@FLASHVER@'',@XPINST@,\n{file:''http://blip.tv/rss/flash/@CODE@?referrer=blip.tv&source=1'',enablejs:''true'',feedurl:''http://WatchMojo.blip.tv/rss'',\nshowplayerpath:''showplayerpath=http://blip.tv/scripts/flash/showplayer.swf''},\n{wmode:''@WMODE@'',bgcolor:''@BGCOLOR@'',quality:''high'',allowScriptAccess:''sameDomain'',allowFullScreen:''@USEFULLSCREEN@'',menu:''@MENU@''},\n{id:''p_@DIVID@'',styleclass:''@AVCSS@''});\n</script>', 'Blip.tv original player');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avr_popup`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avr_popup` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `divid` varchar(255) NOT NULL,
+  `code` mediumtext NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `wtime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`,`divid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+
+--
+-- Dumping data for table `jos_avr_popup`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avr_ripper`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avr_ripper` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `flags` int(11) NOT NULL DEFAULT '0',
+  `cindex` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `regex` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `jos_avr_ripper`
+--
+
+INSERT INTO `jos_avr_ripper` (`id`, `version`, `flags`, `cindex`, `name`, `url`, `regex`, `description`) VALUES
+(1, 0, 0, 0, '6cn', 'http://6.cn/watch/@CODE@.html', 'pageMessage.evid\\s*=\\s*''([^'']+)''\\s*;', '6CN.com'),
+(2, 0, 0, 0, 'bofunk', 'http://www.bofunk.com/video/@CODE@.html', '<input\\stype=''text''\\svalue=''<embed\\ssrc="([^"]+)"', 'Bofunk.com'),
+(3, 0, 0, 0, 'break', 'http://www.break.com/index/@CODE@.html', '<param name="movie" value="([^"]+)">', 'Break.com'),
+(4, 0, 0, 0, 'dropshots', 'http://www.dropshots.com/V1.0/Media.getList?appid=dropshots&username=@USER@&min_taken_date=@CODE@&passwordprotection=false&output=xml', '<video>(.+)</video>', 'Dropshots.com'),
+(5, 0, 0, 0, 'mega', 'http://www.megavideo.com/?v=@CODE@', 'addVariable\\s*\\(\\s*"flv"\\s*,\\s*"([^"]+)"[\\s\\S]*?addVariable\\s*\\(\\s*"k"\\s*,\\s*"([^"]+)"[\\s\\S]*?addVariable\\s*\\(\\s*"vid_time"\\s*,\\s*"([^"]+)"', 'MegaVideo.com'),
+(6, 0, 0, 0, 'ted', 'http://www.ted.com/index.php/talks/view/id/@CODE@', 'firstRun\\s*=\\s*"([^"]+)"', 'TED.com'),
+(7, 0, 0, 0, 'ted2', 'http://www.ted.com/index.php/talks/view/id/@CODE@', 'paste-->.+&file=([^&]+).*</object>', 'TED.com (for alternate player)'),
+(8, 0, 0, 0, 'yahoo', 'http://video.yahoo.com/watch/@CODE@', 'addVariable\\s*\\(\\s*"id"\\s*,\\s*"([^"]+)"', 'Yahoo Video'),
+(9, 0, 0, 0, 'streetfire', 'http://videos.streetfire.net/video/@CODE@.htm', '_embedCodeID.*video=([\\dabcdef\\-]+)', 'StreetFire'),
+(10, 0, 0, 0, 'myshows', 'http://www.myshows.cn/myplayvideo.aspx?vid=@CODE@', 'vidFileName=([^"]+)', 'Myshows.cn (previouslyly seehaha.com)'),
+(11, 0, 0, 0, 'virb', 'http://www.virb.com/@CODE@', 'external/video/([^&"]+)', 'Virb.com'),
+(12, 0, 0, 0, 'blip', 'http://www.blip.tv/file/@CODE@', 'setPostsId\\s*\\(\\s*(\\d+)\\s*\\)', 'Blip.tv'),
+(13, 0, 0, 0, 'apple', 'http://www.apple.com/trailers/@CODE@', '''(http:\\/\\/movies\\.apple\\.com\\/.*?\\.mov)''', 'Apple.com trailers');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_avr_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_avr_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` int(11) NOT NULL DEFAULT '0',
+  `player_id` int(11) NOT NULL,
+  `ripper_id` int(11) NOT NULL DEFAULT '0',
+  `local` int(1) NOT NULL DEFAULT '0',
+  `plist` int(1) NOT NULL DEFAULT '0',
+  `name` varchar(25) NOT NULL,
+  `postreplace` varchar(255) NOT NULL DEFAULT '',
+  `sampleregex` varchar(255) NOT NULL DEFAULT '',
+  `description` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  KEY `tag` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=94 ;
+
+--
+-- Dumping data for table `jos_avr_tags`
+--
+
+INSERT INTO `jos_avr_tags` (`id`, `version`, `player_id`, `ripper_id`, `local`, `plist`, `name`, `postreplace`, `sampleregex`, `description`) VALUES
+(1, 0, 1, 0, 1, 1, 'flv', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.flv";}', '^(.+)\\.flv$', 'Local FLV'),
+(2, 0, 1, 0, 0, 1, 'flvremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.flv)$', 'Generic Remote FLV'),
+(3, 0, 1, 0, 1, 1, 'swf', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.swf";}', '^(.+)\\.swf$', 'Local SWF Video'),
+(4, 0, 1, 0, 0, 1, 'swfremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.swf)$', 'Generic Remote SWF Video'),
+(5, 0, 1, 0, 1, 1, 'mp3', 'a:3:{s:7:"@WIDTH@";s:8:"@AWIDTH@";s:8:"@HEIGHT@";s:9:"@AHEIGHT@";s:6:"@MURL@";s:16:"@ALOC@@CODE@.mp3";}', '^(.+)\\.mp3$', 'Local MP3'),
+(6, 0, 1, 0, 0, 1, 'mp3remote', 'a:3:{s:7:"@WIDTH@";s:8:"@AWIDTH@";s:8:"@HEIGHT@";s:9:"@AHEIGHT@";s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mp3)$', 'Generic Remote MP3'),
+(7, 0, 1, 0, 1, 1, 'mp4-flv', 'a:2:{s:6:"@TYPE@";s:3:"flv";s:6:"@MURL@";s:16:"@VLOC@@CODE@.mp4";}', '^(.+)\\.mp4$', 'Local MP4 (JW Media Player)'),
+(8, 0, 1, 0, 0, 1, 'mp4-flvremote', 'a:4:{s:7:"@WIDTH@";s:7:"@WIDTH@";s:8:"@HEIGHT@";s:8:"@HEIGHT@";s:6:"@TYPE@";s:3:"flv";s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mp4)$', 'Generic Remote MP4 (JW Media Player)'),
+(9, 0, 1, 0, 1, 1, 'm4v', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.m4v";}', '^(.+)\\.m4v$', 'Local M4V'),
+(10, 0, 1, 0, 0, 1, 'm4vremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.m4v)$', 'Generic Remote M4V'),
+(11, 0, 1, 0, 1, 1, '3gp', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.3gp";}', '^(.+)\\.3gp$', 'Local 3GP'),
+(12, 0, 1, 0, 0, 1, '3gpremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.3gp)$', 'Generic Remote 3GP'),
+(13, 0, 1, 0, 1, 1, 'rbs', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.rbs";}', '^(.+)\\.rbs$', 'Local RBS'),
+(14, 0, 1, 0, 0, 1, 'rbsremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.rbs)$', 'Generic Remote RBS'),
+(15, 0, 1, 0, 1, 0, 'auto', 'a:1:{s:6:"@MURL@";s:12:"@VLOC@@CODE@";}', '^(.+\\.xml)$', 'Local Playlist'),
+(16, 0, 1, 0, 0, 0, 'autoremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.xml)$', 'Generic Remote Playlist'),
+(17, 0, 2, 0, 1, 0, 'wmv', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.wmv";}', '^(.+)\\.wmv$', 'Local WMV'),
+(18, 0, 2, 0, 0, 0, 'wmvremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.wmv)$', 'Generic Remote WMV'),
+(19, 0, 2, 0, 1, 0, 'wma', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.wma";}', '^(.+)\\.wma$', 'Local WMA'),
+(20, 0, 2, 0, 0, 0, 'wmaremote', 'a:3:{s:7:"@WIDTH@";s:8:"@AWIDTH@";s:8:"@HEIGHT@";s:9:"@AHEIGHT@";s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.wma)$', 'Generic Remote WMA'),
+(21, 0, 2, 0, 1, 0, 'avi', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.avi";}', '^(.+)\\.avi$', 'Local AVI'),
+(22, 0, 2, 0, 0, 0, 'aviremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.avi)$', 'Generic Remote AVI'),
+(23, 0, 2, 0, 1, 0, 'mpg', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.mpg";}', '^(.+)\\.mpg$', 'Local MPG'),
+(24, 0, 2, 0, 0, 0, 'mpgremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mpg)$', 'Generic Remote MPG'),
+(25, 0, 2, 0, 1, 0, 'mpeg', 'a:1:{s:6:"@MURL@";s:17:"@VLOC@@CODE@.mpeg";}', '^(.+)\\.mpeg$', 'Local MPEG'),
+(26, 0, 2, 0, 0, 0, 'mpegremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mpeg)$', 'Generic Remote MPEG'),
+(27, 0, 3, 0, 1, 0, 'mov', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.mov";}', '^(.+)\\.mov$', 'Local MOV (QuickTime)'),
+(28, 0, 3, 0, 0, 0, 'movremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mov)$', 'Generic Remote MOV (QuickTime)'),
+(29, 0, 3, 0, 1, 0, 'mp4', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.mp4";}', '^(.+)\\.mp4', 'Local MP4 (QuickTime)'),
+(30, 0, 3, 0, 0, 0, 'mp4remote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.mp4)$', 'Generic Remote MP4 (QuickTime)'),
+(31, 0, 4, 0, 1, 0, 'rm', 'a:1:{s:6:"@MURL@";s:15:"@VLOC@@CODE@.rm";}', '^(.+)\\.rm$', 'Local RM (RealMedia)'),
+(32, 0, 4, 0, 2, 0, 'rmremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.rm)$', 'Generic Remote RM (RealMedia)'),
+(33, 0, 4, 0, 1, 0, 'ram', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.ram";}', '^(.+)\\.ram$', 'Local RAM (RealMedia)'),
+(34, 0, 4, 0, 0, 0, 'ramremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.ram)$', 'Generic Remote RAM (RealMedia)'),
+(35, 0, 5, 0, 1, 0, 'divx', 'a:1:{s:6:"@MURL@";s:17:"@VLOC@@CODE@.divx";}', '^(.+)\\.divx', 'Local DivX'),
+(36, 0, 5, 0, 0, 0, 'divxremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.divx)$', 'Generic Remote DivX'),
+(37, 0, 6, 1, 0, 0, '6cn', '', 'http:\\/\\/6\\.cn\\/watch\\/(\\d+)\\.html', '6CN.com'),
+(38, 0, 7, 0, 0, 0, 'biku', '', 'http:\\/\\/www\\.biku\\.com\\/opus\\/(\\d+)\\.html', 'Biku.com'),
+(39, 0, 8, 2, 0, 0, 'bofunk', '', 'http:\\/\\/www.bofunk.com\\/video\\/(\\d+\\/[^\\.]+)\\.html$', 'Bofunk.com'),
+(40, 0, 9, 3, 0, 0, 'break', '', 'http:\\/\\/www\\.break\\.com\\/index\\/(.*)\\.html$', 'Break.com'),
+(41, 0, 10, 0, 0, 0, 'clipfish', '', 'http:\\/\\/www\\.clipfish\\.de\\/player\\.php\\?videoid=(.+)', 'ClipFish.de'),
+(42, 0, 11, 0, 0, 0, 'collegehumor', '', 'http:\\/\\/www\\.collegehumor\\.com\\/video:(\\d+)', 'College Humor'),
+(43, 0, 12, 0, 0, 0, 'currenttv', '', 'http:\\/\\/current\\.com\\/items\\/(\\d+)_.*', 'Current-TV'),
+(44, 0, 13, 0, 0, 0, 'dmotion', '', 'http:\\/\\/www\\.dailymotion\\.com\\/.*video\\/([^_]+)_[^\\/]+$', 'DailyMotion.com'),
+(45, 0, 1, 4, 0, 0, 'dropshots', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '', 'Dropshots.com'),
+(46, 0, 14, 0, 0, 0, 'freevideoblog', '', 'http:\\/\\/www\\.vidiac\\.com\\/video\\/([\\dabcdef\\-]+)\\.htm$', 'Vidiac.com (previously FreeVideoBlog)'),
+(47, 0, 15, 0, 0, 0, 'gametrailers', '', 'http:\\/\\/www\\.gametrailers\\.com\\/player\\/(\\d+)\\.html$', 'GameTrailers'),
+(48, 0, 16, 0, 0, 0, 'google', 'a:1:{s:6:"@LANG@";s:2:"en";}', 'http:\\/\\/video\\.google\\.com\\/videoplay\\?docid=(-{0,1}\\d+)', 'Google Video (international)'),
+(49, 0, 16, 0, 0, 0, 'google.co.uk', 'a:1:{s:6:"@LANG@";s:5:"en-GB";}', 'http:\\/\\/video\\.google\\.co\\.uk\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (UK)'),
+(50, 0, 16, 0, 0, 0, 'google.com.au', 'a:1:{s:6:"@LANG@";s:5:"en-AU";}', 'http:\\/\\/video\\.google\\.com\\.au\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Australia)'),
+(51, 0, 16, 0, 0, 0, 'google.de', 'a:1:{s:6:"@LANG@";s:2:"de";}', 'http:\\/\\/video\\.google\\.de\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Germany)'),
+(52, 0, 16, 0, 0, 0, 'google.es', 'a:1:{s:6:"@LANG@";s:2:"es";}', 'http:\\/\\/video\\.google\\.es\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Spain)'),
+(53, 0, 16, 0, 0, 0, 'google.fr', 'a:1:{s:6:"@LANG@";s:2:"fr";}', 'http:\\/\\/video\\.google\\.fr\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (France)'),
+(54, 0, 16, 0, 0, 0, 'google.it', 'a:1:{s:6:"@LANG@";s:2:"it";}', 'http:\\/\\/video\\.google\\.it\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Italy)'),
+(55, 0, 16, 0, 0, 0, 'google.nl', 'a:1:{s:6:"@LANG@";s:2:"nl";}', 'http:\\/\\/video\\.google\\.nl\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Netherlands)'),
+(56, 0, 16, 0, 0, 0, 'google.pl', 'a:1:{s:6:"@LANG@";s:2:"pl";}', 'http:\\/\\/video\\.google\\.pl\\/videoplay\\?docid=(-{0,1}\\d+)$', 'Google Video (Poland)'),
+(57, 0, 17, 0, 0, 0, 'ifilm', '', '', 'Spike.com (previously iFilm.com)'),
+(58, 0, 18, 0, 0, 0, 'jumpcut', '', 'http:\\/\\/www\\.jumpcut\\.com\\/view\\/{0,1}\\?id=([A-F\\d]+)$', 'JumpCut.com'),
+(59, 0, 19, 5, 0, 0, 'mega', '', 'http:\\/\\/www\\.megavideo\\.com\\/\\?v=(\\w+)$', 'MegaVideo.com'),
+(60, 0, 20, 0, 0, 0, 'metacafe', '', 'http:\\/\\/www\\.metacafe\\.com\\/watch\\/(\\d+\\/[a-z_]+)\\/$', 'Metacafe.com'),
+(61, 0, 21, 0, 0, 0, 'mofile', '', 'http:\\/\\/tv\\.mofile\\.com\\/([^\\/]+)\\/$', 'Mofile TV'),
+(62, 0, 22, 0, 0, 0, 'myvideo', '', 'http:\\/\\/www\\.myvideo\\.de\\/watch\\/(\\d+)', 'MyVideo.de'),
+(63, 0, 23, 0, 0, 0, 'quxiu', '', 'http:\\/\\/www\\.quxiu\\.com\\/video\\/play_(\\d+_\\d+)\\.htm$', 'Quixu.com'),
+(64, 0, 24, 0, 0, 0, 'revver', '', 'http:\\/\\/www\\.revver\\.com\\/video\\/(\\d+)\\/[^\\/]+\\/$', 'Revver.com (using Flash)'),
+(65, 0, 25, 0, 0, 0, 'seehaha', '', 'http:\\/\\/www\\.seehaha\\.com\\/play\\/(\\d+)$', 'SeeHaha.com'),
+(66, 0, 26, 0, 0, 0, 'sevenload', '', 'http:\\/\\/de\\.sevenload\\.com\\/videos\\/([^\\/\\-]{1,7})[^\\/\\-]?[\\/\\-][^\\/]+$', 'SevenLoad.de'),
+(67, 0, 27, 0, 0, 0, 'stickam', '', 'http:\\/\\/www\\.stickam\\.com\\/editMediaComment\\.do\\?method=load&mId=(\\d+)$', 'StickAm.com'),
+(68, 0, 28, 0, 0, 0, 'streetfire', '', 'http:\\/\\/videos\\.streetfire\\.net\\/video\\/([\\dabcdef-]+)\\.htm$', 'StreetFire Videos (Old variant)'),
+(69, 0, 29, 6, 0, 0, 'ted', '', 'http:\\/\\/www\\.ted\\.com\\/(?:index\\.php\\/)?talks\\/view\\/id\\/(\\d+)$', 'TED.com (Original Player)'),
+(70, 0, 30, 7, 0, 0, 'ted2', '', 'http:\\/\\/www\\.ted\\.com\\/index\\.php\\/talks\\/view\\/id\\/(\\d+)$', 'TED.com (Foreign Player)'),
+(71, 0, 31, 0, 0, 0, 'tudou', '', 'http:\\/\\/www\\.tudou\\.com\\/programs\\/view\\/([^\\/]+)\\/$', 'Tudou.com'),
+(72, 0, 32, 0, 0, 0, 'uume', '', 'http:\\/\\/www\\.uume\\.com\\/play_([^\\/]+)$', 'Uume.com'),
+(73, 0, 33, 0, 0, 0, 'vimeo', '', 'http:\\/\\/(?:www\\.)?vimeo\\.com\\/(\\d+)$', 'Vimeo'),
+(74, 0, 34, 0, 0, 0, 'virb', '', '', 'Virb.com'),
+(75, 0, 1, 0, 0, 0, 'wangyou', 'a:1:{s:6:"@MURL@";s:50:"http://v.wangyou.com/playlistMedia.php%3Fid=@CODE@";}', 'http:\\/\\/v\\.wangyou\\.com\\/p([^\\.]+)\\.html', 'WangYou.com'),
+(76, 0, 36, 8, 0, 0, 'yahoo', '', 'http:\\/\\/video\\.yahoo\\.com\\/watch\\/(\\d+)\\/.*$', 'Yahoo Video'),
+(77, 0, 37, 0, 0, 0, 'youtube', '', 'http:\\/\\/(?:\\w+\\.)?youtube\\.com\\/watch\\?.*v=([^&]+).*$', 'YouTube (Original Player)'),
+(78, 0, 1, 0, 0, 1, 'youtubejw', 'a:2:{s:10:"@IFS(IMG)@";s:59:"image:''http://i.ytimg.com/vi/@CODE@/default.jpg'',@IFS(IMG)@";s:6:"@MURL@";s:41:"http://www.youtube.com/watch%3Fv%3D@CODE@";}', 'http:\\/\\/(?:\\w+\\.)?youtube\\.com\\/watch\\?.*v=([^&]+).*$', 'YouTube (JW Media Player)'),
+(81, 0, 3, 0, 0, 0, 'revver-mov', 'a:1:{s:6:"@MURL@";s:50:"http://media.revver.com/broadcast/@CODE@/video.mov";}', '', 'Revver.com (using QuickTime)'),
+(82, 0, 28, 9, 0, 0, 'streetfire2', '', 'http:\\/\\/videos\\.streetfire\\.net\\/video\\/([^\\/\\.]+)\\.htm$', 'StreetFire Videos'),
+(83, 0, 14, 0, 0, 0, 'vidiac', '', 'http:\\/\\/www\\.vidiac\\.com\\/video\\/([\\dabcdef\\-]+)\\.htm$', 'Vidiac.com (previously FreeVideoBlog)'),
+(84, 0, 39, 0, 1, 0, 'flash', 'a:1:{s:6:"@MURL@";s:16:"@VLOC@@CODE@.swf";}', '^(.+)\\.swf$', 'Plain local flash embedding (for flash animations)'),
+(85, 0, 39, 0, 0, 0, 'flashremote', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^(https{0,1}:\\/\\/.*\\.swf)$', 'Plain remote flash embedding (for flash animations)'),
+(86, 0, 17, 0, 0, 0, 'spike', '', '^http:\\/\\/www\\.spike\\.com\\/video\\/.*\\/(\\d+)$', 'Spike.com (previously iFilm.com)'),
+(87, 0, 40, 0, 0, 0, 'bcove', '', '^http:\\/\\/www\\.brightcove\\.tv\\/title\\.jsp\\?title=(\\d+).*$', 'Brightcove.tv'),
+(88, 0, 41, 10, 0, 0, 'myshows', '', 'http:\\/\\/www\\.myshows\\.cn\\/myplayvideo\\.aspx\\?vid=(\\d+)', 'Myshows.cn (previouslyly seehaha.com)'),
+(89, 0, 34, 11, 0, 0, 'virb2', '', 'http:\\/\\/www\\.virb\\.com\\/(.*)$', 'Virb.com'),
+(90, 0, 42, 12, 0, 0, 'blip', '', '^http:\\/\\/(?:www\\.)?blip\\.tv\\/file\\/(\\d+).*', 'Blip.tv'),
+(91, 0, 1, 12, 0, 0, 'blipjw', 'a:1:{s:6:"@MURL@";s:57:"http://blip.tv/rss/flash/@CODE@?referrer=blip.tv&source=1";}', '^http:\\/\\/(?:www\\.)?blip\\.tv\\/file\\/(\\d+)\\?.*', 'Blip.tv using JW Media Player'),
+(92, 0, 3, 13, 0, 0, 'apple', 'a:1:{s:6:"@MURL@";s:6:"@CODE@";}', '^http:\\/\\/www\\.apple\\.com\\/trailers\\/(.*)', 'Apple.com trailers'),
+(93, 0, 39, 0, 0, 0, 'movieweb', 'a:1:{s:6:"@MURL@";s:32:"http://www.movieweb.com/v/@CODE@";}', 'http:\\/\\/www\\.movieweb\\.com\\/video\\/(\\w+)$', 'MovieWeb');
 
 -- --------------------------------------------------------
 
@@ -62,10 +376,10 @@ CREATE TABLE IF NOT EXISTS `jos_banner` (
 INSERT INTO `jos_banner` (`bid`, `cid`, `type`, `name`, `alias`, `imptotal`, `impmade`, `clicks`, `imageurl`, `clickurl`, `date`, `showBanner`, `checked_out`, `checked_out_time`, `editor`, `custombannercode`, `catid`, `description`, `sticky`, `ordering`, `publish_up`, `publish_down`, `tags`, `params`) VALUES
 (1, 1, 'banner', 'OSM 1', 'osm-1', 0, 43, 0, 'osmbanner1.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (2, 1, 'banner', 'OSM 2', 'osm-2', 0, 49, 0, 'osmbanner2.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(3, 1, '', 'Joomla!', 'joomla', 0, 131, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 131, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 126, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 126, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(3, 1, '', 'Joomla!', 'joomla', 0, 156, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 156, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 151, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 151, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (7, 1, '', 'Joomla! Promo Shop', 'joomla-promo-shop', 0, 8, 1, 'shop-ad.jpg', 'http://shop.joomla.org', '2007-09-19 17:26:24', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (8, 1, '', 'Joomla! Promo Books', 'joomla-promo-books', 0, 9, 0, 'shop-ad-books.jpg', 'http://shop.joomla.org/amazoncom-bookstores.html', '2007-09-19 17:28:01', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '');
 
@@ -192,7 +506,7 @@ CREATE TABLE IF NOT EXISTS `jos_components` (
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `parent_option` (`parent`,`option`(32))
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=46 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
 
 --
 -- Dumping data for table `jos_components`
@@ -242,7 +556,12 @@ INSERT INTO `jos_components` (`id`, `name`, `link`, `menuid`, `parent`, `admin_m
 (42, 'JoomlaPack', 'option=com_joomlapack', 0, 0, 'option=com_joomlapack', 'JoomlaPack', 'com_joomlapack', 0, 'components/com_joomlapack/assets/images/joomlapack-16.png', 0, '', 1),
 (43, 'BACKUP_NOW', '', 0, 42, 'option=com_joomlapack&view=backup', 'BACKUP_NOW', 'com_joomlapack', 0, 'components/com_joomlapack/assets/images/backup-16.png', 0, '', 1),
 (44, 'CONFIGURATION', '', 0, 42, 'option=com_joomlapack&view=config', 'CONFIGURATION', 'com_joomlapack', 1, 'components/com_joomlapack/assets/images/config-16.png', 0, '', 1),
-(45, 'ADMINISTER_BACKUP_FILES', '', 0, 42, 'option=com_joomlapack&view=buadmin', 'ADMINISTER_BACKUP_FILES', 'com_joomlapack', 2, 'components/com_joomlapack/assets/images/bufa-16.png', 0, '', 1);
+(45, 'ADMINISTER_BACKUP_FILES', '', 0, 42, 'option=com_joomlapack&view=buadmin', 'ADMINISTER_BACKUP_FILES', 'com_joomlapack', 2, 'components/com_joomlapack/assets/images/bufa-16.png', 0, '', 1),
+(46, 'AvReloaded', '', 0, 0, '', 'AvReloaded', 'com_avreloaded', 0, '', 0, '', 1),
+(47, 'AVR_TITLE_MANAGE_PLAYERS', '', 0, 46, 'option=com_avreloaded&view=players', 'AVR_TITLE_MANAGE_PLAYERS', 'com_avreloaded', 0, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 1),
+(48, 'AVR_TITLE_MANAGE_RIPPERS', '', 0, 46, 'option=com_avreloaded&view=rippers', 'AVR_TITLE_MANAGE_RIPPERS', 'com_avreloaded', 1, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 1),
+(49, 'AVR_TITLE_MANAGE_TAGS', '', 0, 46, 'option=com_avreloaded&view=tags', 'AVR_TITLE_MANAGE_TAGS', 'com_avreloaded', 2, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 1),
+(50, 'AVR_TITLE_MANAGE_PLAYLISTS', '', 0, 46, 'option=com_avreloaded&view=playlists', 'AVR_TITLE_MANAGE_PLAYLISTS', 'com_avreloaded', 3, 'components/com_avreloaded/assets/avreloaded-16x16.png', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -383,7 +702,7 @@ INSERT INTO `jos_content` (`id`, `title`, `alias`, `title_alias`, `introtext`, `
 (43, 'Example Pages and Menu Links', 'example-pages-and-menu-links', '', '<p>This page is an example of content that is <em>Uncategorized</em>; that is, it does not belong to any Section or Category. You will see there is a new Menu in the left column. It shows links to the same content presented in 4 different page layouts.</p><ul><li>Section Blog</li><li>Section Table</li><li> Blog Category</li><li>Category Table</li></ul><p>Follow the links in the <strong>Example Pages</strong> Menu to see some of the options available to you to present all the different types of content included within the default installation of Joomla!.</p><p>This includes Components and individual Articles. These links or Menu Item Types (to give them their proper name) are all controlled from within the <strong><font face="courier new,courier">Menu Manager-&gt;[menuname]-&gt;Menu Items Manager</font></strong>. </p>', '', 1, 0, 0, 0, '2008-08-12 09:26:52', 62, '', '2008-08-12 09:26:52', 62, 0, '0000-00-00 00:00:00', '2006-10-11 10:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 7, 0, 1, 'Uncategorized, Uncategorized, Example Pages and Menu Links', '', 0, 43, 'robots=\nauthor='),
 (44, 'Joomla! Security Strike Team', 'joomla-security-strike-team', '', '<p>The Joomla! Project has assembled a top-notch team of experts to form the new Joomla! Security Strike Team. This new team will solely focus on investigating and resolving security issues. Instead of working in relative secrecy, the JSST will have a strong public-facing presence at the <a href="http://developer.joomla.org/security.html" target="_blank" title="Joomla! Security Center">Joomla! Security Center</a>.</p>', '<p>The new JSST will call the new <a href="http://developer.joomla.org/security.html" target="_blank" title="Joomla! Security Center">Joomla! Security Center</a> their home base. The Security Center provides a public presence for <a href="http://developer.joomla.org/security/news.html" target="_blank" title="Joomla! Security News">security issues</a> and a platform for the JSST to <a href="http://developer.joomla.org/security/articles-tutorials.html" target="_blank" title="Joomla! Security Articles">help the general public better understand security</a> and how it relates to Joomla!. The Security Center also offers users a clearer understanding of how security issues are handled. There''s also a <a href="http://feeds.joomla.org/JoomlaSecurityNews" target="_blank" title="Joomla! Security News Feed">news feed</a>, which provides subscribers an up-to-the-minute notification of security issues as they arise.</p>', 1, 1, 0, 1, '2007-07-07 09:54:06', 62, '', '2007-07-07 09:54:06', 62, 0, '0000-00-00 00:00:00', '2004-07-06 22:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 3, '', '', 0, 0, 'robots=\nauthor='),
 (45, 'Joomla! Community Portal', 'joomla-community-portal', '', '<p>The <a href="http://community.joomla.org/" target="_blank" title="Joomla! Community Portal">Joomla! Community Portal</a> is now online. There, you will find a constant source of information about the activities of contributors powering the Joomla! Project. Learn about <a href="http://community.joomla.org/events.html" target="_blank" title="Joomla! Events">Joomla! Events</a> worldwide, and see if there is a <a href="http://community.joomla.org/user-groups.html" target="_blank" title="Joomla! User Groups">Joomla! User Group</a> nearby.</p><p>The <a href="http://community.joomla.org/magazine.html" target="_blank" title="Joomla! Community Magazine">Joomla! Community Magazine</a> promises an interesting overview of feature articles, community accomplishments, learning topics, and project updates each month. Also, check out <a href="http://community.joomla.org/connect.html" target="_blank" title="JoomlaConnect">JoomlaConnect&#0153;</a>. This aggregated RSS feed brings together Joomla! news from all over the world in your language. Get the latest and greatest by clicking <a href="http://community.joomla.org/connect.html" target="_blank" title="JoomlaConnect">here</a>.</p>', '', 1, 1, 0, 1, '2007-07-07 09:54:06', 62, '', '2007-07-07 09:54:06', 62, 0, '0000-00-00 00:00:00', '2004-07-06 22:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 2, 0, 2, '', '', 0, 5, 'robots=\nauthor='),
-(46, 'A1', 'a1', '', '<p>sssssss</p>', '', 1, 5, 0, 34, '2009-08-09 08:27:05', 62, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2009-08-09 08:27:05', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 1, '', '', 1, 3, 'robots=\nauthor='),
+(46, 'A1', 'a1', '', '<p>sssssss</p>', '', 1, 5, 0, 34, '2009-08-09 08:27:05', 62, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2009-08-09 08:27:05', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 1, '', '', 1, 7, 'robots=\nauthor='),
 (47, 'Oracle_Manuals', 'oraclemanuals', '', '<p>This is oracle</p>', '', 1, 6, 0, 35, '2009-08-09 09:16:44', 62, '', '2009-08-09 09:35:45', 62, 0, '0000-00-00 00:00:00', '2009-08-09 09:16:44', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 2, 0, 1, '', '', 1, 1, 'robots=\nauthor=');
 
 -- --------------------------------------------------------
@@ -924,7 +1243,7 @@ CREATE TABLE IF NOT EXISTS `jos_modules` (
   PRIMARY KEY (`id`),
   KEY `published` (`published`,`access`),
   KEY `newsfeeds` (`module`,`published`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `jos_modules`
@@ -976,7 +1295,8 @@ INSERT INTO `jos_modules` (`id`, `title`, `content`, `ordering`, `position`, `ch
 (46, 'Oracle', '', 2, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu_noix', 0, 1, 1, 'menutype=oraclemenu\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
 (45, 'Sun', '', 4, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu_noix', 0, 1, 1, 'menutype=sunmenu\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
 (47, 'VirtueMart Shopping Cart', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_virtuemart_cart', 0, 0, 1, '', 0, 0, ''),
-(48, 'JoomlaPack Backup Notification Module', '', 17, 'icon', 0, '0000-00-00 00:00:00', 1, 'mod_jpadmin', 0, 2, 1, '', 0, 1, '');
+(48, 'JoomlaPack Backup Notification Module', '', 17, 'icon', 0, '0000-00-00 00:00:00', 1, 'mod_jpadmin', 0, 2, 1, '', 0, 1, ''),
+(49, 'AllVideos Reloaded', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_avreloaded', 0, 0, 1, 'moduleclass_sfx=\nheader_text=\nmediacode={auto}first.xml{/auto}\nfooter_text=\npopup=0\npwidth=320\npheight=180\nlinktxt=\n\n', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1101,7 +1421,8 @@ INSERT INTO `jos_modules_menu` (`moduleid`, `menuid`) VALUES
 (46, 24),
 (46, 54),
 (47, 0),
-(48, 0);
+(48, 0),
+(49, 1);
 
 -- --------------------------------------------------------
 
@@ -1359,7 +1680,7 @@ CREATE TABLE IF NOT EXISTS `jos_plugins` (
   `params` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_folder` (`published`,`client_id`,`access`,`folder`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `jos_plugins`
@@ -1400,7 +1721,10 @@ INSERT INTO `jos_plugins` (`id`, `name`, `element`, `folder`, `access`, `orderin
 (33, 'System - Backlink', 'backlink', 'system', 0, 7, 0, 1, 0, 0, '0000-00-00 00:00:00', ''),
 (34, 'noixACL - System Plugin 2.0.10', 'noixacl', 'system', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', ''),
 (35, 'noixACL - User Plugin 2.0.10', 'noixacl', 'user', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', ''),
-(36, 'MultiShare', 'multishare', 'content', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', 'shareservice=1\n@spacer=AddThis Options\naddthis_brand_color=FFFFFF\naddthis_brand_background_color=000000\nLogoURL=http://www.addthis.com/images/your_logo.png\naddthis_logo_background_color=EFEFEF\naddthis_logo_color=666699\nLanguage=en\naddthis_services_order=favorites, email, digg, delicious, myspace, facebook, google, live, more\n@spacer2=CSS and style\nShow=2\n@spacer3=ShareThis Code\n@spacer4=Tellafriend code (SocialTwist)\n@spacer5=Custom/other service Code\nURI=http://www.shikle.com/addthisforjoomla.htm\n');
+(36, 'MultiShare', 'multishare', 'content', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', 'shareservice=1\n@spacer=AddThis Options\naddthis_brand_color=FFFFFF\naddthis_brand_background_color=000000\nLogoURL=http://www.addthis.com/images/your_logo.png\naddthis_logo_background_color=EFEFEF\naddthis_logo_color=666699\nLanguage=en\naddthis_services_order=favorites, email, digg, delicious, myspace, facebook, google, live, more\n@spacer2=CSS and style\nShow=2\n@spacer3=ShareThis Code\n@spacer4=Tellafriend code (SocialTwist)\n@spacer5=Custom/other service Code\nURI=http://www.shikle.com/addthisforjoomla.htm\n'),
+(37, 'Content - AllVideos Reloaded', 'avreloaded', 'content', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', 'avcss=allvideos\nwidth=400\nheight=320\nvdir=videos\nwmode=window\nbgcolor=#FFFFFF\nadir=audio\nawidth=300\naheight=20\nripcache=1\ncache_time=3600\n'),
+(38, 'Button - AllVideos Reloaded', 'avreloaded', 'editors-xtd', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', ''),
+(39, 'System - AllVideos Reloaded', 'avreloaded', 'system', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -1574,8 +1898,8 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`) VALUES
-('admin', '1258858902', '4fa238fffefc910f368b8e165308709a', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:113;s:19:"session.timer.start";i:1258856386;s:18:"session.timer.last";i:1258858902;s:17:"session.timer.now";i:1258858902;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:6:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":7:{s:23:"com_modulesfilter_order";s:10:"m.position";s:27:"com_modulesfilter_order_Dir";s:0:"";s:23:"com_modulesfilter_state";s:0:"";s:26:"com_modulesfilter_position";s:1:"0";s:22:"com_modulesfilter_type";s:1:"0";s:26:"com_modulesfilter_assigned";s:1:"0";s:17:"com_modulessearch";s:0:"";}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}s:6:"global";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";s:2:"20";}}}s:11:"com_modules";a:1:{s:4:"data";O:8:"stdClass":1:{s:10:"limitstart";i:0;}}s:11:"com_content";a:1:{s:4:"data";O:8:"stdClass":8:{s:23:"viewcontentfilter_order";s:12:"section_name";s:27:"viewcontentfilter_order_Dir";s:0:"";s:23:"viewcontentfilter_state";s:0:"";s:16:"viewcontentcatid";i:0;s:26:"viewcontentfilter_authorid";i:0;s:27:"viewcontentfilter_sectionid";s:2:"-1";s:17:"viewcontentsearch";s:0:"";s:21:"viewcontentlimitstart";s:2:"40";}}s:9:"com_menus";a:1:{s:4:"data";O:8:"stdClass":1:{s:8:"menutype";s:8:"mainmenu";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-22 02:19:46";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"72138f35d7728ea2aedb366cd9c05aa9";}'),
-('', '1258858924', '889c328b42f8eab5566513d3e6c37336', 1, 0, '', 0, 0, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258858924;s:18:"session.timer.last";i:1258858924;s:17:"session.timer.now";i:1258858924;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";s:15:"Public Frontend";s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"105cd79d6ffacef043d108c24cdcc611";}auth|a:11:{s:11:"show_prices";i:1;s:7:"user_id";i:0;s:8:"username";s:4:"demo";s:5:"perms";s:0:"";s:10:"first_name";s:5:"guest";s:9:"last_name";s:0:"";s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";i:1;s:22:"is_registered_customer";b:0;}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|i:1;minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";');
+('admin', '1258908392', '34388767d0e63ed6e27abb4ab2e34b16', 0, 62, 'Super Administrator', 25, 0, '__default|a:8:{s:15:"session.counter";i:32;s:19:"session.timer.start";i:1258906826;s:18:"session.timer.last";i:1258908388;s:17:"session.timer.now";i:1258908392;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"admin@kmit.local.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-22 16:20:34";s:10:"activation";s:0:"";s:6:"params";s:56:"admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:1:"0";}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:10:"0773874145";}s:13:"session.token";s:32:"61628144f6ee82b88ddb84323e5b73a7";}auth|a:13:{s:11:"show_prices";i:1;s:7:"user_id";s:2:"62";s:8:"username";s:5:"admin";s:5:"perms";s:5:"admin";s:10:"first_name";N;s:9:"last_name";N;s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";s:1:"1";s:22:"is_registered_customer";b:1;s:7:"country";s:2:"US";s:3:"zip";s:0:"";}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|s:1:"1";minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";'),
+('', '1258908822', 'ecdbfa3f782032dfcabde6a01639e2f0', 1, 0, '', 0, 1, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258908822;s:18:"session.timer.last";i:1258908822;s:17:"session.timer.now";i:1258908822;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"0b36fc8856432eec57f3b2bb99cc29f2";}');
 
 -- --------------------------------------------------------
 
@@ -1649,8 +1973,8 @@ CREATE TABLE IF NOT EXISTS `jos_users` (
 --
 
 INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `gid`, `registerDate`, `lastvisitDate`, `activation`, `params`, `mobile`) VALUES
-(62, 'Administrator', 'admin', 'admin@kmit.local.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-22 02:21:41', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '0773874145'),
-(63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-22 03:02:04', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
+(62, 'Administrator', 'admin', 'admin@kmit.local.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-22 16:53:42', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '0773874145'),
+(63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-22 16:20:26', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
 (64, 'user2', 'user2', 'user2@kmit.com', '11303cc0ab96d7a0700856748a97b9ec:0hFP07y4rQrSA3GMrcL4BrgDkTNGWiWu', 'Oracle', 0, 0, 32, '2009-08-09 04:50:13', '2009-08-09 17:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '');
 
 -- --------------------------------------------------------
