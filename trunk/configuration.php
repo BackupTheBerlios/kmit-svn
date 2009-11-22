@@ -35,8 +35,8 @@ var $force_ssl = '0';
 var $offset = '0';
 var $offset_user = '0';
 /* Mail Settings */
-var $mailer = 'mail';
-var $mailfrom = 'hdulanjala@yahoo.com';
+var $mailer = 'smtp';
+var $mailfrom = 'admin@kmit.local.com';
 var $fromname = 'Kmit';
 var $sendmail = '/usr/sbin/sendmail';
 var $smtpauth = '0';
@@ -44,7 +44,7 @@ var $smtpsecure = 'none';
 var $smtpport = '25';
 var $smtpuser = '';
 var $smtppass = '';
-var $smtphost = 'localhost';
+var $smtphost = 'kmit.local.com';
 /* Cache Settings */
 var $caching = '0';
 var $cachetime = '15';
