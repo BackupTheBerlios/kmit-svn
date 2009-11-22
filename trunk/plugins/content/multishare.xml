@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>MultiShare</name>
+	<author>Juan Padial</author>
+	<creationDate>2009 Abril 20</creationDate>
+	<copyright>(C) 2009. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>soporte@shikle.com</authorEmail>
+	<authorUrl>www.shikle.com</authorUrl>
+	<version>1.0</version>
+	<description>Provide a social bookmark widget for your content articles. You can use whatever code form whatever bookmark service or use Addthis. If you decide to use Addthis you can control all options of Addthis button.</description>
+	<files>
+		<filename plugin="multishare">multishare.php</filename>
+	</files>	
+  <params>    
+    <param name="excludeSectionID" type="text" default="" label="Exclude Section ID" description="Exclude specific section ID (to specify more than one section, seperate with a comma , ). Use 0 for uncategorized." /> 
+    <param name="excludeCategoryID" type="text" default="" label="Exclude category ID" description="Exclude specific category ID (to specify more than one category, seperate with a comma , ). Use 0 for uncategorized." /> 
+    <param name="excludeID" type="text" default="" label="Exclude content ID" description="Exclude specific content items (to specify more than one article, seperate with a comma , )." />
+    <param name="shareservice" type="radio" default="1" label="Select Addthis or other if you want to add a code from other service.">
+           <option value="1">Addthis</option>
+           <option value="2">Sharethis</option>
+           <option value="3">Tellafriend (SocialTwist)</option>
+           <option value="4">Other</option>
+    </param>
+    <param name="@spacer" type="spacer" default="AddThis Options" label="AddThis Options" description="AddThis Options" />
+    <param name="addthis_pub" type="text" default="" label="Enter the name of your AddThis account."/>
+    <param name="addthis_brand" type="text" default="" label="Enter your brand text, for example: My Site."/>
+    <param name="addthis_brand_color" type="text" default="FFFFFF" label="Enter the colour for brand text, hexadecimal without #."/>
+    <param name="addthis_brand_background_color" type="text" default="000000" label="Enter the colour for background of brand text, hexadecimal without #."/>
+    <param name="LogoURL" type="text" default="http://www.addthis.com/images/your_logo.png" label="Enter the URL of your logo image." description="Full URL with http"/>
+    <param name="addthis_logo_background_color" type="text" default="EFEFEF" label="Enter the color you want to display in backgroud of your logo image, hexadecimal without #."/>
+    <param name="addthis_logo_color" type="text" default="666699" label="Enter the color you want for your text from addthis beside your logo image, hexadecimal without #."/>
+    <param name="Language" type="text" default="en" label="Enter two letter code for menu language." description="en,es,it...."/>
+    <param name="Buttonimage" type="text" default="" label="URL of custom button image." description="Enter full URL with http where is stored your custom button image. Leave blank to use default."/>
+    <param name="addthis_services_order" type="text" default="favorites, email, digg, delicious, myspace, facebook, google, live, more" label="Enter the bookmark services you want to use separated by comma." description="Enter the services you want to use separated by comma. aim, aolfav, ask, backflip, ballhype, blinklist, blogmarks, bluedot, buzz, delicious, digg, diigo, email, facebook, favorites, fark, feedmelinks, friendfeed, furl, google, kaboodle, kirtsy, linkedin, live, magnolia, misterwong, mixx, multiply, myweb, myspace, netvous, newsvine, print, propeller, reddit, segnalo, sharedstuff, slashdot, spurl, stumbleupon, stylehive, tailrank, technorati, thisnext, twitter, yardbarker, yahoobkm, more."/>
+     <param name="@spacer2" type="spacer" default="CSS and style" label="CSS and style" description="CSS and style"/>
+    <param name="Show" type="radio" default="2" label="Choose if you want to shhow the button after article text, before article text or both.">
+           <option value="1">After text</option>
+           <option value="2">Before text</option>
+           <option value="3">Both</option>
+    </param>
+    <param name="DivCSS" type="text" default="" label="Enter css style for the div which contain the button. For example: float: right;"/>
+    <param name="@spacer3" type="spacer" default="ShareThis Code" label="ShareThis Code" description="ShareThis Code" />
+    <param name="SharethisCode" type="textarea" rows="3" cols="12" default="" label="Enter the code of your ShareThis button."/>
+    <param name="@spacer4" type="spacer" default="Tellafriend code (SocialTwist)" label="Tellafriend code (SocialTwist)" description="Enter the Tellafriend code (SocialTwist)"/>
+    <param name="TellafriendCode" type="textarea" rows="3" cols="12" default="" label="Enter the Tellafriend's code (SocialTwist)."/>
+    <param name="@spacer5" type="spacer" default="Custom/other service Code" label="Custom/other service Code" description="Custom/other service code"/>
+    <param name="CustomCode" type="textarea" rows="3" cols="12" default="" label="Enter the code from other Share service."/>
+    <param name="URI" type="hidden" default="http://www.shikle.com/addthisforjoomla.htm" label="Script URI."/>
+  </params>
+</install>

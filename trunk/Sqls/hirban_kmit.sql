@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 21, 2009 at 06:56 PM
+-- Generation Time: Nov 22, 2009 at 03:27 AM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -62,10 +62,10 @@ CREATE TABLE IF NOT EXISTS `jos_banner` (
 INSERT INTO `jos_banner` (`bid`, `cid`, `type`, `name`, `alias`, `imptotal`, `impmade`, `clicks`, `imageurl`, `clickurl`, `date`, `showBanner`, `checked_out`, `checked_out_time`, `editor`, `custombannercode`, `catid`, `description`, `sticky`, `ordering`, `publish_up`, `publish_down`, `tags`, `params`) VALUES
 (1, 1, 'banner', 'OSM 1', 'osm-1', 0, 43, 0, 'osmbanner1.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (2, 1, 'banner', 'OSM 2', 'osm-2', 0, 49, 0, 'osmbanner2.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(3, 1, '', 'Joomla!', 'joomla', 0, 115, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 115, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 110, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 110, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(3, 1, '', 'Joomla!', 'joomla', 0, 131, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 131, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 126, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 126, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (7, 1, '', 'Joomla! Promo Shop', 'joomla-promo-shop', 0, 8, 1, 'shop-ad.jpg', 'http://shop.joomla.org', '2007-09-19 17:26:24', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (8, 1, '', 'Joomla! Promo Books', 'joomla-promo-books', 0, 9, 0, 'shop-ad-books.jpg', 'http://shop.joomla.org/amazoncom-bookstores.html', '2007-09-19 17:28:01', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '');
 
@@ -383,7 +383,7 @@ INSERT INTO `jos_content` (`id`, `title`, `alias`, `title_alias`, `introtext`, `
 (43, 'Example Pages and Menu Links', 'example-pages-and-menu-links', '', '<p>This page is an example of content that is <em>Uncategorized</em>; that is, it does not belong to any Section or Category. You will see there is a new Menu in the left column. It shows links to the same content presented in 4 different page layouts.</p><ul><li>Section Blog</li><li>Section Table</li><li> Blog Category</li><li>Category Table</li></ul><p>Follow the links in the <strong>Example Pages</strong> Menu to see some of the options available to you to present all the different types of content included within the default installation of Joomla!.</p><p>This includes Components and individual Articles. These links or Menu Item Types (to give them their proper name) are all controlled from within the <strong><font face="courier new,courier">Menu Manager-&gt;[menuname]-&gt;Menu Items Manager</font></strong>. </p>', '', 1, 0, 0, 0, '2008-08-12 09:26:52', 62, '', '2008-08-12 09:26:52', 62, 0, '0000-00-00 00:00:00', '2006-10-11 10:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 7, 0, 1, 'Uncategorized, Uncategorized, Example Pages and Menu Links', '', 0, 43, 'robots=\nauthor='),
 (44, 'Joomla! Security Strike Team', 'joomla-security-strike-team', '', '<p>The Joomla! Project has assembled a top-notch team of experts to form the new Joomla! Security Strike Team. This new team will solely focus on investigating and resolving security issues. Instead of working in relative secrecy, the JSST will have a strong public-facing presence at the <a href="http://developer.joomla.org/security.html" target="_blank" title="Joomla! Security Center">Joomla! Security Center</a>.</p>', '<p>The new JSST will call the new <a href="http://developer.joomla.org/security.html" target="_blank" title="Joomla! Security Center">Joomla! Security Center</a> their home base. The Security Center provides a public presence for <a href="http://developer.joomla.org/security/news.html" target="_blank" title="Joomla! Security News">security issues</a> and a platform for the JSST to <a href="http://developer.joomla.org/security/articles-tutorials.html" target="_blank" title="Joomla! Security Articles">help the general public better understand security</a> and how it relates to Joomla!. The Security Center also offers users a clearer understanding of how security issues are handled. There''s also a <a href="http://feeds.joomla.org/JoomlaSecurityNews" target="_blank" title="Joomla! Security News Feed">news feed</a>, which provides subscribers an up-to-the-minute notification of security issues as they arise.</p>', 1, 1, 0, 1, '2007-07-07 09:54:06', 62, '', '2007-07-07 09:54:06', 62, 0, '0000-00-00 00:00:00', '2004-07-06 22:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 3, '', '', 0, 0, 'robots=\nauthor='),
 (45, 'Joomla! Community Portal', 'joomla-community-portal', '', '<p>The <a href="http://community.joomla.org/" target="_blank" title="Joomla! Community Portal">Joomla! Community Portal</a> is now online. There, you will find a constant source of information about the activities of contributors powering the Joomla! Project. Learn about <a href="http://community.joomla.org/events.html" target="_blank" title="Joomla! Events">Joomla! Events</a> worldwide, and see if there is a <a href="http://community.joomla.org/user-groups.html" target="_blank" title="Joomla! User Groups">Joomla! User Group</a> nearby.</p><p>The <a href="http://community.joomla.org/magazine.html" target="_blank" title="Joomla! Community Magazine">Joomla! Community Magazine</a> promises an interesting overview of feature articles, community accomplishments, learning topics, and project updates each month. Also, check out <a href="http://community.joomla.org/connect.html" target="_blank" title="JoomlaConnect">JoomlaConnect&#0153;</a>. This aggregated RSS feed brings together Joomla! news from all over the world in your language. Get the latest and greatest by clicking <a href="http://community.joomla.org/connect.html" target="_blank" title="JoomlaConnect">here</a>.</p>', '', 1, 1, 0, 1, '2007-07-07 09:54:06', 62, '', '2007-07-07 09:54:06', 62, 0, '0000-00-00 00:00:00', '2004-07-06 22:00:00', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 2, 0, 2, '', '', 0, 5, 'robots=\nauthor='),
-(46, 'A1', 'a1', '', '<p>sssssss</p>', '', 1, 5, 0, 34, '2009-08-09 08:27:05', 62, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2009-08-09 08:27:05', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 1, '', '', 1, 0, 'robots=\nauthor='),
+(46, 'A1', 'a1', '', '<p>sssssss</p>', '', 1, 5, 0, 34, '2009-08-09 08:27:05', 62, '', '0000-00-00 00:00:00', 0, 0, '0000-00-00 00:00:00', '2009-08-09 08:27:05', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 1, 0, 1, '', '', 1, 3, 'robots=\nauthor='),
 (47, 'Oracle_Manuals', 'oraclemanuals', '', '<p>This is oracle</p>', '', 1, 6, 0, 35, '2009-08-09 09:16:44', 62, '', '2009-08-09 09:35:45', 62, 0, '0000-00-00 00:00:00', '2009-08-09 09:16:44', '0000-00-00 00:00:00', '', '', 'show_title=\nlink_titles=\nshow_intro=\nshow_section=\nlink_section=\nshow_category=\nlink_category=\nshow_vote=\nshow_author=\nshow_create_date=\nshow_modify_date=\nshow_pdf_icon=\nshow_print_icon=\nshow_email_icon=\nlanguage=\nkeyref=\nreadmore=', 2, 0, 1, '', '', 1, 1, 'robots=\nauthor=');
 
 -- --------------------------------------------------------
@@ -446,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `jos_core_acl_aro` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `jos_section_value_value_aro` (`section_value`(100),`value`(100)),
   KEY `jos_gacl_hidden_aro` (`hidden`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `jos_core_acl_aro`
@@ -783,7 +783,7 @@ INSERT INTO `jos_menu` (`id`, `menutype`, `name`, `alias`, `link`, `type`, `publ
 (17, 'othermenu', 'Administrator', 'administrator', 'administrator/', 'url', 1, 0, 0, 0, 7, 0, '0000-00-00 00:00:00', 0, 0, 0, 3, 'menu_image=-1\n\n', 0, 0, 0),
 (18, 'topmenu', 'News', 'news', 'index.php?option=com_newsfeeds&view=newsfeed&id=1&feedid=1', 'component', 1, 0, 11, 0, 3, 0, '0000-00-00 00:00:00', 0, 0, 0, 3, 'show_page_title=1\npage_title=News\npageclass_sfx=\nmenu_image=-1\nsecure=0\nshow_headings=1\nshow_name=1\nshow_articles=1\nshow_link=1\nshow_other_cats=1\nshow_cat_description=1\nshow_cat_items=1\nshow_feed_image=1\nshow_feed_description=1\nshow_item_description=1\nfeed_word_count=0\n\n', 0, 0, 0),
 (20, 'usermenu', 'Your Details', 'your-details', 'index.php?option=com_user&view=user&task=edit', 'component', 1, 0, 14, 0, 1, 0, '0000-00-00 00:00:00', 0, 0, 1, 3, '', 0, 0, 0),
-(24, 'usermenu', 'Logout', 'logout', 'index.php?option=com_user&view=login', 'component', 1, 0, 14, 0, 5, 0, '0000-00-00 00:00:00', 0, 0, 1, 3, '', 0, 0, 0),
+(24, 'usermenu', 'Logout', 'logout', 'index.php?option=com_user&view=login', 'component', 0, 0, 14, 0, 5, 0, '0000-00-00 00:00:00', 0, 0, 1, 3, '', 0, 0, 0),
 (38, 'keyconcepts', 'Content Layouts', 'content-layouts', 'index.php?option=com_content&view=article&id=24', 'component', 1, 0, 20, 0, 2, 0, '0000-00-00 00:00:00', 0, 0, 0, 0, 'pageclass_sfx=\nmenu_image=-1\nsecure=0\nshow_noauth=0\nlink_titles=0\nshow_intro=1\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_author=1\nshow_create_date=1\nshow_modify_date=1\nshow_item_navigation=0\nshow_readmore=1\nshow_vote=0\nshow_icons=1\nshow_pdf_icon=1\nshow_print_icon=1\nshow_email_icon=1\nshow_hits=1\n\n', 0, 0, 0),
 (27, 'mainmenu', 'Joomla! Overview', 'joomla-overview', 'index.php?option=com_content&view=article&id=19', 'component', 1, 0, 20, 0, 2, 0, '0000-00-00 00:00:00', 0, 0, 0, 0, 'pageclass_sfx=\nmenu_image=-1\nsecure=0\nshow_noauth=0\nlink_titles=0\nshow_intro=1\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_author=1\nshow_create_date=1\nshow_modify_date=1\nshow_item_navigation=0\nshow_readmore=1\nshow_vote=0\nshow_icons=1\nshow_pdf_icon=1\nshow_print_icon=1\nshow_email_icon=1\nshow_hits=1\n\n', 0, 0, 0),
 (28, 'topmenu', 'About Joomla!', 'about-joomla', 'index.php?option=com_content&view=article&id=25', 'component', 1, 0, 20, 0, 1, 0, '0000-00-00 00:00:00', 0, 0, 0, 0, 'pageclass_sfx=\nmenu_image=-1\nsecure=0\nshow_noauth=0\nlink_titles=0\nshow_intro=1\nshow_section=0\nlink_section=0\nshow_category=0\nlink_category=0\nshow_author=1\nshow_create_date=1\nshow_modify_date=1\nshow_item_navigation=0\nshow_readmore=1\nshow_vote=0\nshow_icons=1\nshow_pdf_icon=1\nshow_print_icon=1\nshow_email_icon=1\nshow_hits=1\n\n', 0, 0, 0),
@@ -948,7 +948,7 @@ INSERT INTO `jos_modules` (`id`, `title`, `content`, `ordering`, `position`, `ch
 (15, 'Title', '', 1, 'title', 0, '0000-00-00 00:00:00', 1, 'mod_title', 0, 2, 1, '', 0, 1, ''),
 (16, 'Polls', '', 1, 'right', 0, '0000-00-00 00:00:00', 1, 'mod_poll', 0, 0, 1, 'id=14\ncache=1', 0, 0, ''),
 (17, 'User Menu', '', 7, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu', 0, 1, 1, 'menutype=usermenu\nmoduleclass_sfx=_menu\ncache=1', 1, 0, ''),
-(18, 'Login Form', '', 10, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_login', 0, 0, 1, 'greeting=1\nname=0', 1, 0, ''),
+(18, 'Login Form', '', 10, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_login', 0, 0, 1, 'cache=0\nmoduleclass_sfx=\npretext=\nposttext=\nlogin=\nlogout=1\ngreeting=1\nname=0\nusesecure=0\n\n', 1, 0, ''),
 (19, 'Latest News', '', 4, 'user1', 0, '0000-00-00 00:00:00', 1, 'mod_latestnews', 0, 0, 1, 'cache=1', 1, 0, ''),
 (20, 'Statistics', '', 9, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_stats', 0, 0, 1, 'serverinfo=1\nsiteinfo=1\ncounter=1\nincrease=0\nmoduleclass_sfx=', 0, 0, ''),
 (21, 'Who''s Online', '', 2, 'right', 0, '0000-00-00 00:00:00', 1, 'mod_whosonline', 0, 0, 1, 'online=1\nusers=1\nmoduleclass_sfx=', 0, 0, ''),
@@ -1031,6 +1031,38 @@ INSERT INTO `jos_modules_menu` (`moduleid`, `menuid`) VALUES
 (16, 1),
 (17, 0),
 (18, 1),
+(18, 2),
+(18, 11),
+(18, 12),
+(18, 13),
+(18, 14),
+(18, 15),
+(18, 16),
+(18, 17),
+(18, 18),
+(18, 20),
+(18, 27),
+(18, 28),
+(18, 29),
+(18, 30),
+(18, 34),
+(18, 37),
+(18, 38),
+(18, 40),
+(18, 41),
+(18, 43),
+(18, 44),
+(18, 45),
+(18, 46),
+(18, 47),
+(18, 48),
+(18, 49),
+(18, 50),
+(18, 51),
+(18, 52),
+(18, 53),
+(18, 54),
+(18, 55),
 (19, 1),
 (19, 2),
 (19, 4),
@@ -1327,7 +1359,7 @@ CREATE TABLE IF NOT EXISTS `jos_plugins` (
   `params` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_folder` (`published`,`client_id`,`access`,`folder`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `jos_plugins`
@@ -1367,7 +1399,8 @@ INSERT INTO `jos_plugins` (`id`, `name`, `element`, `folder`, `access`, `orderin
 (32, 'System - Remember Me', 'remember', 'system', 0, 6, 1, 1, 0, 0, '0000-00-00 00:00:00', ''),
 (33, 'System - Backlink', 'backlink', 'system', 0, 7, 0, 1, 0, 0, '0000-00-00 00:00:00', ''),
 (34, 'noixACL - System Plugin 2.0.10', 'noixacl', 'system', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', ''),
-(35, 'noixACL - User Plugin 2.0.10', 'noixacl', 'user', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', '');
+(35, 'noixACL - User Plugin 2.0.10', 'noixacl', 'user', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', ''),
+(36, 'MultiShare', 'multishare', 'content', 0, 0, 1, 0, 0, 0, '0000-00-00 00:00:00', 'shareservice=1\n@spacer=AddThis Options\naddthis_brand_color=FFFFFF\naddthis_brand_background_color=000000\nLogoURL=http://www.addthis.com/images/your_logo.png\naddthis_logo_background_color=EFEFEF\naddthis_logo_color=666699\nLanguage=en\naddthis_services_order=favorites, email, digg, delicious, myspace, facebook, google, live, more\n@spacer2=CSS and style\nShow=2\n@spacer3=ShareThis Code\n@spacer4=Tellafriend code (SocialTwist)\n@spacer5=Custom/other service Code\nURI=http://www.shikle.com/addthisforjoomla.htm\n');
 
 -- --------------------------------------------------------
 
@@ -1541,7 +1574,8 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`) VALUES
-('admin', '1258829758', '07e7edd30b268d45fc7d9d09748c4625', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:20;s:19:"session.timer.start";i:1258829593;s:18:"session.timer.last";i:1258829758;s:17:"session.timer.now";i:1258829758;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:2:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-20 18:13:43";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"b950c501b96641253e7267d1edfb2b69";}');
+('admin', '1258858902', '4fa238fffefc910f368b8e165308709a', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:113;s:19:"session.timer.start";i:1258856386;s:18:"session.timer.last";i:1258858902;s:17:"session.timer.now";i:1258858902;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:6:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":7:{s:23:"com_modulesfilter_order";s:10:"m.position";s:27:"com_modulesfilter_order_Dir";s:0:"";s:23:"com_modulesfilter_state";s:0:"";s:26:"com_modulesfilter_position";s:1:"0";s:22:"com_modulesfilter_type";s:1:"0";s:26:"com_modulesfilter_assigned";s:1:"0";s:17:"com_modulessearch";s:0:"";}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}s:6:"global";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";s:2:"20";}}}s:11:"com_modules";a:1:{s:4:"data";O:8:"stdClass":1:{s:10:"limitstart";i:0;}}s:11:"com_content";a:1:{s:4:"data";O:8:"stdClass":8:{s:23:"viewcontentfilter_order";s:12:"section_name";s:27:"viewcontentfilter_order_Dir";s:0:"";s:23:"viewcontentfilter_state";s:0:"";s:16:"viewcontentcatid";i:0;s:26:"viewcontentfilter_authorid";i:0;s:27:"viewcontentfilter_sectionid";s:2:"-1";s:17:"viewcontentsearch";s:0:"";s:21:"viewcontentlimitstart";s:2:"40";}}s:9:"com_menus";a:1:{s:4:"data";O:8:"stdClass":1:{s:8:"menutype";s:8:"mainmenu";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"hdulanjala@yahoo.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-22 02:19:46";s:10:"activation";s:0:"";s:6:"params";s:0:"";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"72138f35d7728ea2aedb366cd9c05aa9";}'),
+('', '1258858924', '889c328b42f8eab5566513d3e6c37336', 1, 0, '', 0, 0, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258858924;s:18:"session.timer.last";i:1258858924;s:17:"session.timer.now";i:1258858924;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";s:15:"Public Frontend";s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"105cd79d6ffacef043d108c24cdcc611";}auth|a:11:{s:11:"show_prices";i:1;s:7:"user_id";i:0;s:8:"username";s:4:"demo";s:5:"perms";s:0:"";s:10:"first_name";s:5:"guest";s:9:"last_name";s:0:"";s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";i:1;s:22:"is_registered_customer";b:0;}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|i:1;minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";');
 
 -- --------------------------------------------------------
 
@@ -1608,15 +1642,15 @@ CREATE TABLE IF NOT EXISTS `jos_users` (
   KEY `gid_block` (`gid`,`block`),
   KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=66 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
 
 --
 -- Dumping data for table `jos_users`
 --
 
 INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `gid`, `registerDate`, `lastvisitDate`, `activation`, `params`, `mobile`) VALUES
-(62, 'Administrator', 'admin', 'hdulanjala@yahoo.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-21 18:53:21', '', '', ''),
-(63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-19 03:34:05', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
+(62, 'Administrator', 'admin', 'admin@kmit.local.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-22 02:21:41', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '0773874145'),
+(63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-22 03:02:04', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
 (64, 'user2', 'user2', 'user2@kmit.com', '11303cc0ab96d7a0700856748a97b9ec:0hFP07y4rQrSA3GMrcL4BrgDkTNGWiWu', 'Oracle', 0, 0, 32, '2009-08-09 04:50:13', '2009-08-09 17:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '');
 
 -- --------------------------------------------------------
