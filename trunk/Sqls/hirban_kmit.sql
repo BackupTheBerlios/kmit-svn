@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2009 at 05:48 PM
+-- Generation Time: Nov 23, 2009 at 12:30 AM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -18,6 +18,40 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `hirban_kmit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jos_attachments`
+--
+
+CREATE TABLE IF NOT EXISTS `jos_attachments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(80) NOT NULL,
+  `filename_sys` varchar(255) NOT NULL,
+  `file_type` varchar(30) NOT NULL,
+  `file_size` int(11) unsigned NOT NULL,
+  `icon_filename` varchar(20) NOT NULL,
+  `display_filename` varchar(80) NOT NULL DEFAULT '',
+  `description` varchar(255) NOT NULL DEFAULT '',
+  `url` varchar(255) NOT NULL,
+  `uploader_id` int(11) NOT NULL,
+  `article_id` int(11) unsigned NOT NULL,
+  `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `user_field_1` varchar(100) NOT NULL DEFAULT '',
+  `user_field_2` varchar(100) NOT NULL DEFAULT '',
+  `user_field_3` varchar(100) NOT NULL DEFAULT '',
+  `create_date` datetime DEFAULT NULL,
+  `modification_date` datetime DEFAULT NULL,
+  `download_count` int(11) unsigned DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `attachment_article_id_index` (`article_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `jos_attachments`
+--
+
 
 -- --------------------------------------------------------
 
@@ -376,10 +410,10 @@ CREATE TABLE IF NOT EXISTS `jos_banner` (
 INSERT INTO `jos_banner` (`bid`, `cid`, `type`, `name`, `alias`, `imptotal`, `impmade`, `clicks`, `imageurl`, `clickurl`, `date`, `showBanner`, `checked_out`, `checked_out_time`, `editor`, `custombannercode`, `catid`, `description`, `sticky`, `ordering`, `publish_up`, `publish_down`, `tags`, `params`) VALUES
 (1, 1, 'banner', 'OSM 1', 'osm-1', 0, 43, 0, 'osmbanner1.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (2, 1, 'banner', 'OSM 2', 'osm-2', 0, 49, 0, 'osmbanner2.png', 'http://www.opensourcematters.org', '2004-07-07 15:31:29', 1, 0, '0000-00-00 00:00:00', '', '', 13, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(3, 1, '', 'Joomla!', 'joomla', 0, 158, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 158, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 153, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
-(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 153, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(3, 1, '', 'Joomla!', 'joomla', 0, 163, 0, '', 'http://www.joomla.org', '2006-05-29 14:21:28', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! The most popular and widely used Open Source CMS Project in the world.', 14, '', 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(4, 1, '', 'JoomlaCode', 'joomlacode', 0, 163, 0, '', 'http://joomlacode.org', '2006-05-29 14:19:26', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomlaCode, development and distribution made easy.', 14, '', 0, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(5, 1, '', 'Joomla! Extensions', 'joomla-extensions', 0, 158, 0, '', 'http://extensions.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nJoomla! Components, Modules, Plugins and Languages by the bucket load.', 14, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
+(6, 1, '', 'Joomla! Shop', 'joomla-shop', 0, 158, 0, '', 'http://shop.joomla.org', '2006-05-29 14:23:21', 1, 0, '0000-00-00 00:00:00', '', '<a href="{CLICKURL}" target="_blank">{NAME}</a>\r\n<br/>\r\nFor all your Joomla! merchandise.', 14, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (7, 1, '', 'Joomla! Promo Shop', 'joomla-promo-shop', 0, 8, 1, 'shop-ad.jpg', 'http://shop.joomla.org', '2007-09-19 17:26:24', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', ''),
 (8, 1, '', 'Joomla! Promo Books', 'joomla-promo-books', 0, 9, 0, 'shop-ad-books.jpg', 'http://shop.joomla.org/amazoncom-bookstores.html', '2007-09-19 17:28:01', 1, 0, '0000-00-00 00:00:00', '', '', 33, '', 0, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', '');
 
@@ -1275,7 +1309,7 @@ INSERT INTO `jos_modules` (`id`, `title`, `content`, `ordering`, `position`, `ch
 (22, 'Popular', '', 6, 'user2', 0, '0000-00-00 00:00:00', 1, 'mod_mostread', 0, 0, 1, 'cache=1', 0, 0, ''),
 (23, 'Archive', '', 11, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_archive', 0, 0, 1, 'cache=1', 1, 0, ''),
 (24, 'Sections', '', 12, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_sections', 0, 0, 1, 'cache=1', 1, 0, ''),
-(25, 'Newsflash', '', 1, 'top', 0, '0000-00-00 00:00:00', 1, 'mod_newsflash', 0, 0, 1, 'catid=3\r\nstyle=random\r\nitems=\r\nmoduleclass_sfx=', 0, 0, ''),
+(25, 'Newsflash', '', 1, 'top', 0, '0000-00-00 00:00:00', 0, 'mod_newsflash', 0, 0, 1, 'catid=3\r\nstyle=random\r\nitems=\r\nmoduleclass_sfx=', 0, 0, ''),
 (26, 'Related Items', '', 13, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_related_items', 0, 0, 1, '', 0, 0, ''),
 (27, 'Search', '', 1, 'user4', 0, '0000-00-00 00:00:00', 1, 'mod_search', 0, 0, 0, 'cache=1', 0, 0, ''),
 (28, 'Random Image', '', 4, 'right', 0, '0000-00-00 00:00:00', 1, 'mod_random_image', 0, 0, 1, '', 0, 0, ''),
@@ -1297,7 +1331,7 @@ INSERT INTO `jos_modules` (`id`, `title`, `content`, `ordering`, `position`, `ch
 (45, 'Sun', '', 4, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_mainmenu_noix', 0, 1, 1, 'menutype=sunmenu\nmenu_style=list\nstartLevel=0\nendLevel=0\nshowAllChildren=0\nwindow_open=\nshow_whitespace=0\ncache=1\ntag_id=\nclass_sfx=\nmoduleclass_sfx=\nmaxdepth=10\nmenu_images=0\nmenu_images_align=0\nmenu_images_link=0\nexpand_menu=0\nactivate_parent=0\nfull_active_id=0\nindent_image=0\nindent_image1=\nindent_image2=\nindent_image3=\nindent_image4=\nindent_image5=\nindent_image6=\nspacer=\nend_spacer=\n\n', 0, 0, ''),
 (47, 'VirtueMart Shopping Cart', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_virtuemart_cart', 0, 0, 1, '', 0, 0, ''),
 (48, 'JoomlaPack Backup Notification Module', '', 17, 'icon', 0, '0000-00-00 00:00:00', 1, 'mod_jpadmin', 0, 2, 1, '', 0, 1, ''),
-(49, 'AllVideos Reloaded', '', 16, 'left', 0, '0000-00-00 00:00:00', 1, 'mod_avreloaded', 0, 0, 1, 'moduleclass_sfx=\nheader_text=\nmediacode={auto}first.xml{/auto}\nfooter_text=\npopup=0\npwidth=320\npheight=180\nlinktxt=\n\n', 0, 0, '');
+(49, 'AllVideos Reloaded', '', 16, 'left', 0, '0000-00-00 00:00:00', 0, 'mod_avreloaded', 0, 0, 1, 'moduleclass_sfx=\nheader_text=\nmediacode={auto}first.xml{/auto}\nfooter_text=\npopup=0\npwidth=320\npheight=180\nlinktxt=\n\n', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1902,8 +1936,8 @@ CREATE TABLE IF NOT EXISTS `jos_session` (
 --
 
 INSERT INTO `jos_session` (`username`, `time`, `session_id`, `guest`, `userid`, `usertype`, `gid`, `client_id`, `data`) VALUES
-('user1', '1258911750', '34388767d0e63ed6e27abb4ab2e34b16', 0, 63, 'Sun', 31, 0, '__default|a:8:{s:15:"session.counter";i:3;s:19:"session.timer.start";i:1258911742;s:18:"session.timer.last";i:1258911750;s:17:"session.timer.now";i:1258911750;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"63";s:4:"name";s:5:"User1";s:8:"username";s:5:"user1";s:5:"email";s:14:"user1@kmit.com";s:8:"password";s:65:"2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd";s:14:"password_clear";s:0:"";s:8:"usertype";s:3:"Sun";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"0";s:3:"gid";s:2:"31";s:12:"registerDate";s:19:"2009-08-09 04:49:30";s:13:"lastvisitDate";s:19:"2009-11-22 17:42:30";s:10:"activation";s:0:"";s:6:"params";s:56:"admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:1:"0";}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:0:"";}s:13:"session.token";s:32:"e1b7d1ec17180cae86d84236a3f90afb";}auth|a:13:{s:11:"show_prices";i:1;s:7:"user_id";s:2:"63";s:8:"username";s:5:"user1";s:5:"perms";s:7:"shopper";s:10:"first_name";N;s:9:"last_name";N;s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";s:1:"1";s:22:"is_registered_customer";b:1;s:7:"country";s:2:"US";s:3:"zip";s:0:"";}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|s:1:"1";minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";'),
-('', '1258911864', '1e423ed2063341840bcff1f976df9fab', 1, 0, '', 0, 1, '__default|a:8:{s:15:"session.counter";i:1;s:19:"session.timer.start";i:1258911864;s:18:"session.timer.last";i:1258911864;s:17:"session.timer.now";i:1258911864;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";N;s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"dd206a1c87483161d63e0f80f4886ce6";}');
+('', '1258935307', '71ca1d4010a3f2f0d88d70658718c028', 1, 0, '', 0, 0, '__default|a:8:{s:15:"session.counter";i:5;s:19:"session.timer.start";i:1258934775;s:18:"session.timer.last";i:1258935183;s:17:"session.timer.now";i:1258935307;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:1:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":19:{s:2:"id";i:0;s:4:"name";N;s:8:"username";N;s:5:"email";N;s:8:"password";N;s:14:"password_clear";s:0:"";s:8:"usertype";s:15:"Public Frontend";s:5:"block";N;s:9:"sendEmail";i:0;s:3:"gid";i:0;s:12:"registerDate";N;s:13:"lastvisitDate";N;s:10:"activation";N;s:6:"params";N;s:3:"aid";i:0;s:5:"guest";i:1;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":0:{}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}}s:13:"session.token";s:32:"70bfa38e04c4723a53802b2f0c9c6e68";}auth|a:11:{s:11:"show_prices";i:1;s:7:"user_id";i:0;s:8:"username";s:4:"demo";s:5:"perms";s:0:"";s:10:"first_name";s:5:"guest";s:9:"last_name";s:0:"";s:16:"shopper_group_id";s:1:"5";s:22:"shopper_group_discount";s:4:"0.00";s:24:"show_price_including_tax";s:1:"1";s:21:"default_shopper_group";i:1;s:22:"is_registered_customer";b:0;}cart|a:1:{s:3:"idx";i:0;}recent|a:1:{s:3:"idx";i:0;}ps_vendor_id|i:1;minimum_pov|s:4:"0.00";vendor_currency|s:3:"USD";vmUseGreyBox|s:0:"";vmCartDirection|s:0:"";'),
+('admin', '1258935304', '90825897385dabefaf8d594456716a7d', 0, 62, 'Super Administrator', 25, 1, '__default|a:8:{s:15:"session.counter";i:19;s:19:"session.timer.start";i:1258935082;s:18:"session.timer.last";i:1258935304;s:17:"session.timer.now";i:1258935304;s:22:"session.client.browser";s:116:"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/532.0 (KHTML, like Gecko) Chrome/3.0.195.33 Safari/532.0";s:8:"registry";O:9:"JRegistry":3:{s:17:"_defaultNameSpace";s:7:"session";s:9:"_registry";a:5:{s:7:"session";a:1:{s:4:"data";O:8:"stdClass":7:{s:23:"com_modulesfilter_order";s:10:"m.position";s:27:"com_modulesfilter_order_Dir";s:0:"";s:23:"com_modulesfilter_state";s:0:"";s:26:"com_modulesfilter_position";s:1:"0";s:22:"com_modulesfilter_type";s:1:"0";s:26:"com_modulesfilter_assigned";s:1:"0";s:17:"com_modulessearch";s:0:"";}}s:11:"application";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"lang";s:0:"";}}s:11:"com_content";a:1:{s:4:"data";O:8:"stdClass":8:{s:23:"viewcontentfilter_order";s:12:"section_name";s:27:"viewcontentfilter_order_Dir";s:0:"";s:23:"viewcontentfilter_state";s:0:"";s:16:"viewcontentcatid";i:0;s:26:"viewcontentfilter_authorid";i:0;s:27:"viewcontentfilter_sectionid";s:2:"-1";s:17:"viewcontentsearch";s:2:"a1";s:21:"viewcontentlimitstart";i:0;}}s:6:"global";a:1:{s:4:"data";O:8:"stdClass":1:{s:4:"list";O:8:"stdClass":1:{s:5:"limit";s:2:"20";}}}s:11:"com_modules";a:1:{s:4:"data";O:8:"stdClass":1:{s:10:"limitstart";s:2:"20";}}}s:7:"_errors";a:0:{}}s:4:"user";O:5:"JUser":20:{s:2:"id";s:2:"62";s:4:"name";s:13:"Administrator";s:8:"username";s:5:"admin";s:5:"email";s:20:"admin@kmit.local.com";s:8:"password";s:65:"2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe";s:14:"password_clear";s:0:"";s:8:"usertype";s:19:"Super Administrator";s:5:"block";s:1:"0";s:9:"sendEmail";s:1:"1";s:3:"gid";s:2:"25";s:12:"registerDate";s:19:"2009-08-05 17:57:13";s:13:"lastvisitDate";s:19:"2009-11-22 17:44:24";s:10:"activation";s:0:"";s:6:"params";s:56:"admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n";s:3:"aid";i:2;s:5:"guest";i:0;s:7:"_params";O:10:"JParameter":7:{s:4:"_raw";s:0:"";s:4:"_xml";N;s:9:"_elements";a:0:{}s:12:"_elementPath";a:1:{i:0;s:64:"C:\\RAD\\xampp\\htdocs\\kmit\\libraries\\joomla\\html\\parameter\\element";}s:17:"_defaultNameSpace";s:8:"_default";s:9:"_registry";a:1:{s:8:"_default";a:1:{s:4:"data";O:8:"stdClass":5:{s:14:"admin_language";s:0:"";s:8:"language";s:0:"";s:6:"editor";s:0:"";s:8:"helpsite";s:0:"";s:8:"timezone";s:1:"0";}}}s:7:"_errors";a:0:{}}s:9:"_errorMsg";N;s:7:"_errors";a:0:{}s:6:"mobile";s:10:"0773874145";}s:13:"session.token";s:32:"5a6d6a531df39af663fc237fc61e56e5";}');
 
 -- --------------------------------------------------------
 
@@ -1977,7 +2011,7 @@ CREATE TABLE IF NOT EXISTS `jos_users` (
 --
 
 INSERT INTO `jos_users` (`id`, `name`, `username`, `email`, `password`, `usertype`, `block`, `sendEmail`, `gid`, `registerDate`, `lastvisitDate`, `activation`, `params`, `mobile`) VALUES
-(62, 'Administrator', 'admin', 'admin@kmit.local.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-22 17:44:24', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '0773874145'),
+(62, 'Administrator', 'admin', 'admin@kmit.local.com', '2c0cbcb4aad7a83af91d6e0b0bf5bb7d:O4xZMqiIUjbNqkmItgNtJunmqlTQnvFe', 'Super Administrator', 0, 1, 25, '2009-08-05 17:57:13', '2009-11-23 00:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '0773874145'),
 (63, 'User1', 'user1', 'user1@kmit.com', '2b47e0fd4fcbe24380676dd24dd8ab0c:pQ89bDJeTq8HvAjlT8kLIJAk1hvx18Vd', 'Sun', 0, 0, 31, '2009-08-09 04:49:30', '2009-11-22 17:42:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', ''),
 (64, 'user2', 'user2', 'user2@kmit.com', '11303cc0ab96d7a0700856748a97b9ec:0hFP07y4rQrSA3GMrcL4BrgDkTNGWiWu', 'Oracle', 0, 0, 32, '2009-08-09 04:50:13', '2009-08-09 17:11:30', '', 'admin_language=\nlanguage=\neditor=\nhelpsite=\ntimezone=0\n\n', '');
 
