@@ -18,10 +18,6 @@ JPlugin::loadLanguage( 'tpl_SG1' );
 				<div id="pathway">
 					<jdoc:include type="module" name="breadcrumbs" />
 				</div>
-				
-				<div id="logo">
-					<a href="index.php"><?php echo $mainframe->getCfg('sitename') ;?></a>
-				</div>
 			</div>
 			<div id="newsflash">
 				<jdoc:include type="modules" name="top" />
